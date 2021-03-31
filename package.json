@@ -1,7 +1,7 @@
 {
   "name": "Speech2Text",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unser Projekt 2E",
   "main": "index.js",
   "scripts": {
     "dev": "nw src/",
@@ -13,5 +13,14 @@
   "devDependencies": {
     "nw": "^0.52.1-sdk",
     "nw-builder": "^3.5.7"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juliaamora/Speech2Text.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Juliaamora/Speech2Text/issues"
+  },
+  "homepage": "https://github.com/Juliaamora/Speech2Text#readme"
 }
