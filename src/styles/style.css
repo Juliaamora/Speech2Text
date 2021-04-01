@@ -199,21 +199,20 @@ p{
       transform: translate(-50%, -50%);
     
   }
-  
-  img{
-      width: 30px;
-      height: 30px;
-  }
 
   #pause-button{
       position: absolute;
       left: 52%;
       top: 10%;
+      width: 30px;
+      height: 30px;
   }
 
   #play-button{
     position: absolute;
     left: 45%;
     top: 10%;
+    width: 30px;
+    height: 30px
 }
   

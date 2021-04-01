@@ -4,6 +4,7 @@
    <head>
       <meta charset="utf-8">
       <!-- <title>Responsive Drop-down Menu Bar</title> -->
+      <script src="../app/index.jss"></script>
       <link rel="stylesheet" href="../styles/style.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -44,9 +45,14 @@
          </ul>
       </nav>
       
-      <div id="transcription">test</div>
+      <div id="transcription">
+         <span id="final" class="final"></span>
+         <span id="interim" class="interim"></span>
+      </div>
+
       <img src="../assets/play.svg" alt="play-button" id="play-button">
       <img src="../assets/pause.svg" alt="pause-button" id="pause-button">
+
       <script>
          $('.icon').click(function(){
            $('span').toggleClass("cancel");
