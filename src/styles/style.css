@@ -200,9 +200,9 @@ p{
     
   }
   
-  img{
-      width: 30px;
-      height: 30px;
+  img .transcription{
+      width: 20%;
+      height: 20%;
   }
 
   #pause-button{
