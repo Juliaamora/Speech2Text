@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <!-- <title>Responsive Drop-down Menu Bar</title> -->
+      <script src="../app/index.js"></script>
+      <link rel="stylesheet" href="../styles/style.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <nav>
+         <div class="logo">
+            <img src="../assets/speechie2.png">
+         </div>
+         <div class="speechie">
+            speechie
+         </div>
+         <label for="btn" class="icon">
+         <span class="fa fa-bars"></span>
+         </label>
+         <input type="checkbox" id="btn">
+         <ul>
+            <li>
+               <label for="btn-1" class="show">Datei +</label>
+               <a href="#">Datei</a>
+               <input type="checkbox" id="btn-1">
+               <ul>
+                  <li><a href="#">Öffnen</a></li>
+                  <li><a href="#">Zuletzt verwendete öffnen</a></li>
+                  <li><a href="#">Speichern</a></li>
+                  <li><a href="#">Speichern unter</a></li>
+                  <li><a href="#">Exportieren</a></li>
+                  <li><a href="#">Exportieren als</a></li>
+                  <li><a href="#">Eigenschaften</a></li>
+               </ul>
+            </li>
+            <li><a href="#">Anleitung</a></li>
+            <li><a href="#">Kontakt</a></li>
+         </ul>
+      </nav>
+      
+      <div id="transcription">
+         <span id="final" class="final"></span>
+         <span id="interim" class="interim"></span>
+      </div>
+
+      <img src="../assets/play.svg" alt="play-button" id="play-button">
+      <img src="../assets/pause.svg" alt="pause-button" id="pause-button">
+
+      <script>
+         $('.icon').click(function(){
+           $('span').toggleClass("cancel");
+         });
+      </script>
+   </body>
+</html>
+
