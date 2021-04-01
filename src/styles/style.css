@@ -23,14 +23,14 @@ nav .logo{
   padding-left: 60px;
   padding-top: 15px;
 }
+
 nav .speechie{
-  font-family: REZ;
+  font-family: 'Syne', sans-serif;
   float: left;
   color: white;
   font-size: 35px;
   padding-left: 10px;
-  padding-top: 18px;
-  letter-spacing: 0.02em;
+  padding-top: 15px;
 }
 
 nav ul{
