@@ -201,19 +201,19 @@ p{
   }
   
   img{
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
   }
 
   #pause-button{
       position: absolute;
       left: 52%;
-      top: 9%;
+      top: 10%;
   }
 
   #play-button{
     position: absolute;
     left: 45%;
-    top: 9%;
+    top: 10%;
 }
   
