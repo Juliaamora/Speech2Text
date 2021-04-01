@@ -20,11 +20,19 @@ nav:after{
 nav .logo{
   float: left;
   color: white;
-  font-size: 27px;
-  font-weight: 600;
-  line-height: 70px;
   padding-left: 60px;
+  padding-top: 15px;
 }
+nav .speechie{
+  font-family: REZ;
+  float: left;
+  color: white;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-top: 18px;
+  letter-spacing: 0.02em;
+}
+
 nav ul{
   float: right;
   margin-right: 40px;
