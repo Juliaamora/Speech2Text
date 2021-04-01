@@ -3,7 +3,7 @@ speechElement.lang = 'de-DE';
 speechElement.interimResults = true;
 speechElement.continuous = true;
 var final_transcript = '';
-speechElement.start();
+
 
 speechElement.onstart = function() {
 }
@@ -21,4 +21,17 @@ speechElement.onresult = function(event) {
 	}
 	document.getElementById('final').innerHTML = final_transcript;
 	document.getElementById('interim').innerHTML = interim_transcript;
+}
+
+
+function playButton(){
+	console.log("Transkription startet");
+	speechElement.start();
+	document.getElementById('interim').innerHTML = "START";
+}
+function pauseButton(){
+	console.log("Transkription pausiert");
+	speechElement.stop();
+	document.getElementById('interim').innerHTML = "PAUSE";
+	
 }
