@@ -195,6 +195,17 @@ p{
   img{
       width: 40px;
       height: 40px;
-      color: white;
   }
+
+  #pause-button{
+      position: absolute;
+      left: 52%;
+      top: 9%;
+  }
+
+  #play-button{
+    position: absolute;
+    left: 45%;
+    top: 9%;
+}
   
