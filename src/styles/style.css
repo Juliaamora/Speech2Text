@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #f2f2f2;
+  background: #292929;
 }
 nav{
   background: #1b1b1b;
@@ -182,9 +182,13 @@ p{
 
   #transcription{
       width: 40%;
-      height: 700px;
-      background-color: grey;
+      height: 80%;
+      background-color: rgb(255, 255, 255);
       padding: 50px;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     
   }
   
