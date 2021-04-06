@@ -57,7 +57,7 @@ const downloadToFile = (content, filename, contentType) => {
 	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
   });
 
-}
+
 
 
 
