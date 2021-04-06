@@ -4,11 +4,12 @@
    <head>
       <meta charset="utf-8">
       <!-- <title>Responsive Drop-down Menu Bar</title> -->
-      <script src="../app/index.js"></script>
+      <script defer src="../app/index.js"></script>
       <link rel="stylesheet" href="../styles/style.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link rel="preconnect" href="https://fonts.gstatic.com">
       <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+      <script src="https://kit.fontawesome.com/6f46a9dc22.js" crossorigin="anonymous"></script>
       <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,13 +46,17 @@
          </ul>
       </nav>
       
-      <div id="transcription">
-         <span id="final" class="final"></span>
-         <span id="interim" class="interim"></span>
-      </div>
 
-      <img src="../assets/play.svg" alt="play-button" id="play-button" onclick="playButton();">
-      <img src="../assets/pause.svg" alt="pause-button" id="pause-button" onclick="pauseButton();">
+      <fieldset>
+            <textarea id="final"  class="final"></textarea>
+            <br>
+            <textarea id="interim" class="interim"></textarea>
+            <button id="btnSave">save config</button>
+       </fieldset>
+
+      <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
+      <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
+      <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
 
        <script>
          $('.icon').click(function(){
