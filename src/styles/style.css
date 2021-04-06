@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
-  background: #b7d4ff;
+  background: #ffffff;
 }
 nav{
   background: #326ff0;
@@ -186,9 +186,7 @@ p{
   font-weight: 500;
 }
 
-
-
-  #transcription{
+/*#transcription{
       width: 40%;
       height: 80%;
       background-color: rgb(255, 255, 255);
@@ -197,26 +195,77 @@ p{
       top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
-    
-  }
-
-  #pause-button{
-      position: absolute;
-      left: 52%;
-      top: 10%;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-  }
-
-  #play-button{
-    position: absolute;
-    left: 45%;
-    top: 10%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
 }
+ */ 
+
+#pause-button{
+      position: absolute;
+      left: 55%;
+      top: 10%;
+      cursor: pointer;
+      font-size: 40px;
+  }
+#play-button{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    cursor: pointer;
+    font-size: 40px;
+}
+#stop-button{
+  position: absolute;
+  left: 45%;
+  top: 10%;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+fieldset {
+  max-width: 30%;
+  margin: 5em auto;
+  padding: 2em;
+  border: none;  
+  border-radius: 4px;
+}
+
+.final {
+  width: 100%;
+  min-height: 35em;
+  min-width: 35em;
+  display: block;
+  border: 5px solid #326ff0;
+  border-radius: 4px;
+  padding: 2em;
+  background-color: white;
+}
+
+textarea {
+  width: 100%;
+  min-height: 12em;
+  min-width: 55em;
+  display: block;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 2em;
+  background-color: rgb(228, 228, 228);
+  border: 5px solid #326ff0;
+}
+
+button {
+  display: block;
+  margin: 1em 0 0;
+  border: 1px solid dark;
+  padding: 0.75em;
+  line-height: 1;
+  border-radius: 2px;
+  font-size: 16px;
+}
+
+
+i:hover{
+color: #326ff0;
+}
+
   
 
 *,*:after,*:before{
@@ -240,4 +289,3 @@ p{
 	border:0px;
 	height: 60px;
 }*/
-
