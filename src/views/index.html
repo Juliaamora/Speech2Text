@@ -52,9 +52,12 @@
       <img src="../assets/play.svg" alt="play-button" id="play-button" onclick="playButton();">
       <img src="../assets/pause.svg" alt="pause-button" id="pause-button" onclick="pauseButton();">
 
-      <input type="file" id="real-file" hidden="hidden" />
-      
+      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
       <span id="custom-text">No file chosen, yet.</span>
+
+      <div>
+         <audio controls id="myAudio" autoplay></audio>
+      </div>
 
        <script>
          $('.icon').click(function(){
