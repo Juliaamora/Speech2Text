@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
-<!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en" dir="ltr">
    <head>
       <meta charset="utf-8">
       <!-- <title>Responsive Drop-down Menu Bar</title> -->
+
       <script defer src="../app/index.js"></script>
       <link rel="stylesheet" href="../styles/style.css">
       <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -32,7 +33,7 @@
                <a href="#">Datei</a>
                <input type="checkbox" id="btn-1">
                <ul>
-                  <li><a href="#">Öffnen</a></li>
+                  <li id="openFile"><a href="#">Öffnen</a></li>
                   <li><a href="#">Zuletzt verwendete öffnen</a></li>
                   <li><a href="#">Speichern</a></li>
                   <li><a href="#">Speichern unter</a></li>
@@ -57,6 +58,13 @@
       <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
       <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
       <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
+
+      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+      <span id="custom-text">No file chosen, yet.</span>
+
+      <div>
+         <audio controls id="myAudio" autoplay></audio>
+      </div>
 
        <script>
          $('.icon').click(function(){

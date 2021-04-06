@@ -56,3 +56,45 @@ const downloadToFile = (content, filename, contentType) => {
 	
 	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
   });
+
+}
+
+
+
+const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("openFile");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+
+
+
+var $audio = $('#myAudio');
+$('input').on('change', function(e) {
+var target = e.currentTarget;
+var file = target.files[0];
+var reader = new FileReader();
+
+console.log($audio[0]);
+if (target.files && file) {
+var reader = new FileReader();
+reader.onload = function (e) {
+$audio.attr('src', e.target.result);
+$audio.play();
+}
+reader.readAsDataURL(file);
+}
+});
+
