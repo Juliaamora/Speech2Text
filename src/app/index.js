@@ -1,16 +1,16 @@
-var speechElement = new webkitSpeechRecognition();
-speechElement.lang = 'de-DE';
-speechElement.interimResults = true;
-speechElement.continuous = true;
+var speechElement = new webkitSpeechRecognition(); 		//hiermit nutzen wir die Web API
+speechElement.lang = 'de-DE'; 		//Sprache
+speechElement.interimResults = true; 		//default-Wert = false; 
+speechElement.continuous = true;		//Sprachsteuerung hört NICHT auf(continuous), wenn man aufhört zu sprechen
 var final_transcript = '';
-speechElement.start();
+
 
 speechElement.onstart = function() {
 }
 
 speechElement.onresult = function(event) {
-	var interim_transcript = '';
-	for(var i = event.resultIndex; i < event.results.length; ++i) {
+	var interim_transcript = ''; //der Text, den wir gerade sprechen, der aber noch nicht final ist
+	for(var i = event.resultIndex; i < event.results.length; ++i) {		// i = das Gesprochene / Sprachaufnahme
 		if(event.results[i].isFinal) {
 			final_transcript += event.results[i][0].transcript;
             console.log("HalloIF");
@@ -21,4 +21,17 @@ speechElement.onresult = function(event) {
 	}
 	document.getElementById('final').innerHTML = final_transcript;
 	document.getElementById('interim').innerHTML = interim_transcript;
+}
+
+
+function playButton(){
+	console.log("Transkription startet");
+	speechElement.start();
+	document.getElementById('interim').innerHTML = "START";
+}
+function pauseButton(){
+	console.log("Transkription pausiert");
+	speechElement.stop();
+	document.getElementById('interim').innerHTML = "PAUSE";
+	
 }

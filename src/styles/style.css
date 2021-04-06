@@ -206,6 +206,7 @@ p{
       top: 10%;
       width: 30px;
       height: 30px;
+      cursor: pointer;
   }
 
   #play-button{
@@ -213,6 +214,7 @@ p{
     left: 45%;
     top: 10%;
     width: 30px;
-    height: 30px
+    height: 30px;
+    cursor: pointer;
 }
   

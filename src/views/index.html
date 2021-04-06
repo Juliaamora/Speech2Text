@@ -50,13 +50,13 @@
          <span id="interim" class="interim"></span>
       </div>
 
-      <img src="../assets/play.svg" alt="play-button" id="play-button">
-      <img src="../assets/pause.svg" alt="pause-button" id="pause-button">
+      <img src="../assets/play.svg" alt="play-button" id="play-button" onclick="playButton();">
+      <img src="../assets/pause.svg" alt="pause-button" id="pause-button" onclick="pauseButton();">
 
-      <script>
+       <script>
          $('.icon').click(function(){
            $('span').toggleClass("cancel");
-         });
+        });
       </script>
    </body>
 </html>
