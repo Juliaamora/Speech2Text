@@ -39,7 +39,7 @@ function pauseButton(){
 
 
 const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
+const customBtn = document.getElementById("openFile");
 const customTxt = document.getElementById("custom-text");
 
 customBtn.addEventListener("click", function() {
