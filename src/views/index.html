@@ -3,8 +3,6 @@
 
 <head>
    <meta charset="utf-8">
-   <!-- <title>Responsive Drop-down Menu Bar</title> -->
-
    <script defer src="../app/index.js"></script>
    <link rel="stylesheet" href="../styles/style.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -71,5 +69,24 @@
       <audio controls id="myAudio" autoplay></audio>
    </div>
 
-</body>
+      <fieldset>
+            <textarea id="final"  class="final"></textarea>
+            <br>
+            <textarea id="interim" class="interim"></textarea>
+            
+       </fieldset>
+
+      <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
+      <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
+      <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
+      <i class="fas fa-file-download" id="btnSave" ></i>
+      
+      <div>
+         <audio controls id="myAudio" autoplay></audio>
+      </div>
+
+      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+      <span id="custom-text">No file chosen, yet.</span>
+
+   </body>
 </html>

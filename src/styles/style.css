@@ -201,21 +201,28 @@ p{
 #pause-button{
       position: absolute;
       left: 55%;
-      top: 10%;
+      top: 88%;
       cursor: pointer;
       font-size: 40px;
   }
 #play-button{
     position: absolute;
     left: 50%;
-    top: 10%;
+    top: 88%;
     cursor: pointer;
     font-size: 40px;
 }
 #stop-button{
   position: absolute;
   left: 45%;
-  top: 10%;
+  top: 88%;
+  cursor: pointer;
+  font-size: 40px;
+}
+#btnSave{
+  position: absolute;
+  left: 31%;
+  top: 88%;
   cursor: pointer;
   font-size: 40px;
 }
