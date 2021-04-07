@@ -65,7 +65,7 @@ let specialElementHandlers = {
 		return true;
 	}
 };
-$('#btnSave').click(function () {
+$('#btnSavePDF').click(function () {
 	doc.fromHTML(
 		$('#final').html(), 15, 15, {
 			'width': 170,
