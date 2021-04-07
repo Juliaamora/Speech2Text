@@ -52,19 +52,23 @@
             <textarea id="final"  class="final"></textarea>
             <br>
             <textarea id="interim" class="interim"></textarea>
-            <button id="btnSave">save config</button>
+            
        </fieldset>
 
       <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
       <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
       <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
+      <i class="fas fa-file-download" id="btnSave" ></i>
+      
 
-      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-      <span id="custom-text">No file chosen, yet.</span>
 
+      
       <div>
          <audio controls id="myAudio" autoplay></audio>
       </div>
+
+      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+      <span id="custom-text">No file chosen, yet.</span>
 
        <script>
          $('.icon').click(function(){
