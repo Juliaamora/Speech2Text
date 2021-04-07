@@ -40,7 +40,10 @@ function stopButton(){
 	document.getElementById('interim').innerHTML = "STOP";
 }
 
-const downloadToFile = (content, filename, contentType) => {
+
+
+//Download
+	const downloadToFile = (content, filename, contentType) => {
 	const a = document.createElement('a');
 	const file = new Blob([content], {type: contentType});
 	
@@ -51,11 +54,25 @@ const downloadToFile = (content, filename, contentType) => {
 	URL.revokeObjectURL(a.href);
   };
   
-  document.querySelector('#btnSave').addEventListener('click', () => {
+ 	document.querySelector('#cmd').addEventListener('click', () => {
 	const textArea = document.querySelector('textarea');
 	
 	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
-  });
+  })
+
+  //als PDf speichern
+	var doc= new jsPDF();
+	var specialElementHandlers = {
+	'#editor': function (element,renderer) {
+	return true;
+	}
+	};
+	$('#btnSave').click(function () {
+	doc.fromHTML(
+	$('#final').html(), 15, 15, 
+	{ 'width': 170, 'elementHandlers': specialElementHandlers });
+	doc.save('Reason.pdf'); 
+	} );
 
 
 
