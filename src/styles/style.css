@@ -90,8 +90,10 @@ line-height: 50px;
 }
 nav ul ul ul li{
 position: relative;
-top: -60px;
-left: 150px;
+top: -70px;
+left: 200px;
+border: 1px solid rgba(0,0,0,0.3);
+z-index: 100;
 }
 .show,.icon,input{
 display: none;
