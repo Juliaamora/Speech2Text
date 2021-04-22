@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "window": {   "title": "Speech2Text", 
+  "window": {   
+    "title": "Speech2Text", 
         "icon": "assets/icon.png",  
           "toolbar": true,  
             "width": 1000, 
