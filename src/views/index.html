@@ -37,7 +37,7 @@
             <ul>
                <li id="openFile"><a href="#">Öffnen</a></li>
                <li><a href="#">Zuletzt verwendete öffnen</a></li>
-               <li><a href="#">Speichern</a></li>
+               <li><a href="#" onclick="savetxt();">Speichern</a></li>
                <li><a href="#">Speichern unter</a></li>
                <li><a href="#">Exportieren</a></li>
                <li><a href="#">Exportieren als</a></li>
@@ -54,14 +54,14 @@
       <div id="editor"></div>
       <br>
       <textarea id="interim" class="interim"></textarea>
-      <button id="btnSavePDF" onclick="save()">save as PDF</button>
-      <button id="cmd">as txt</button>
+      <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>-->
+     
    </fieldset>
 
    <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
    <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
    <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
-   <i class="fas fa-file-download" id="btnSave" ></i>
+   <i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
       
       <div>
          <audio controls id="myAudio" autoplay></audio>

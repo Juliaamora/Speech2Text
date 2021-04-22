@@ -53,12 +53,15 @@ const downloadToFile = (content, filename, contentType) => {
 	URL.revokeObjectURL(a.href);
 };
 
-document.querySelector('#cmd').addEventListener('click', () => {
+document.querySelector('#btnSave').click(savetxt)
+
+	function savetxt() {
 	const textArea = document.querySelector('textarea');
 
 	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
-})
-//als PDf speichern
+};
+
+//als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefin
 let doc = new jsPDF();
 let specialElementHandlers = {
 	'#editor': function (element, renderer) {
