@@ -53,11 +53,11 @@ const downloadToFile = (content, filename, contentType) => {
 	URL.revokeObjectURL(a.href);
 };
 
-document.querySelector('#cmd').addEventListener('click', () => {
-	const textArea = document.querySelector('textarea');
+//document.querySelector('#cmd').addEventListener('click', () => {
+	//const textArea = document.querySelector('textarea');
 
-	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
-})
+	//downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
+//})
 //als PDf speichern
 let doc = new jsPDF();
 let specialElementHandlers = {
