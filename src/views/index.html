@@ -2,73 +2,78 @@
 <html lang="en" dir="ltr">
 
 <head>
-   <meta charset="utf-8">
-   <script defer src="../app/index.js"></script>
-   <link rel="stylesheet" href="../styles/style.css">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com">
-   <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
-   <script src="https://kit.fontawesome.com/6f46a9dc22.js" crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-   <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<script defer src="../app/index.js"></script>
+<link rel="stylesheet" href="../styles/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6f46a9dc22.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-   <nav>
-      <div class="logo">
-         <img src="../assets/speechie2.png">
-      </div>
-      <div class="speechie">
-         speechie
-      </div>
-      <label for="btn" class="icon">
-         <span class="fa fa-bars"></span>
-      </label>
-      <input type="checkbox" id="btn">
-      <ul>
-         <li>
-            <label for="btn-1" class="show">Datei +</label>
-            <a href="#">Datei</a>
-            <input type="checkbox" id="btn-1">
-            <ul>
-               <li id="openFile"><a href="#">Öffnen</a></li>
-               <li><a href="#">Zuletzt verwendete öffnen</a></li>
-               <li><a href="#" onclick="savetxt();">Speichern</a></li>
-               <li><a href="#">Speichern unter</a></li>
-               <li><a href="#">Exportieren</a></li>
-               <li><a href="#">Exportieren als</a></li>
-               <li><a href="#">Eigenschaften</a></li>
-            </ul>
-         </li>
-         <li><a href="#">Anleitung</a></li>
-         <li><a href="#">Kontakt</a></li>
-      </ul>
-   </nav>
+<nav>
+<div class="logo">
+<img src="../assets/speechie2.png">
+</div>
+<div class="speechie">
+speechie
+</div>
+<label for="btn" class="icon">
+<span class="fa fa-bars"></span>
+</label>
+<input type="checkbox" id="btn">
+<ul>
+<li>
+<label for="btn-1" class="show">Datei +</label>
+<a href="#">Datei</a>
+<input type="checkbox" id="btn-1">
+<ul>
+<li id="openFile"><a href="#">Öffnen</a></li>
+<li><a href="#">Zuletzt verwendete öffnen</a></li>
+ <li><a href="#" onclick="savetxt();">Speichern</a></li>
+<li><a href="#">Speichern unter</a></li>
+<li><a href="#">Exportieren</a></li>
+<li><a href="#">Exportieren als</a></li>
+<li><a href="#">Eigenschaften</a></li>
+</ul>
+</li>
+<li><a href="#">Anleitung</a></li>
+<li><a href="#">Kontakt</a></li>
+</ul>
+</nav>
 
-   <fieldset>
-      <textarea id="final" class="final"></textarea>
-      <div id="editor"></div>
-      <br>
-      <textarea id="interim" class="interim"></textarea>
-      <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>-->
-     
-   </fieldset>
 
-   <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
-   <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
-   <i class="far fa-stop-circle" id="stop-button" onclick="stopButton();"></i>
-   <i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
-      
-      <div>
-         <audio controls id="myAudio" autoplay></audio>
-      </div>
+<fieldset>
+<div class="audiobar">
+<audio controls id="myAudio" autoplay></audio>
+<input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+<span id="custom-text">No file chosen, yet.</span>
+</div>
 
-      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-      <span id="custom-text">No file chosen, yet.</span>
+<textarea id="final" class="final"></textarea>
+<div id="editor"></div>
+<br>
+<textarea id="interim" class="interim"></textarea>
 
-   </body>
+
+
+<div class="buttons">
+<i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
+<i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
+<i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
+</div>
+<!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
+<button id="cmd" onclick="save()">as txt</button> -->
+</fieldset>
+
+
+
+</body>
 </html>
