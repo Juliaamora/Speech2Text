@@ -37,7 +37,7 @@ speechie
 <ul>
 <li id="openFile"><a href="#">Öffnen</a></li>
 <li><a href="#">Zuletzt verwendete öffnen</a></li>
-<li><a href="#">Speichern</a></li>
+ <li><a href="#" onclick="savetxt();">Speichern</a></li>
 <li><a href="#">Speichern unter</a></li>
 <li><a href="#">Exportieren</a></li>
 <li><a href="#">Exportieren als</a></li>
@@ -67,7 +67,7 @@ speechie
 <div class="buttons">
 <i class="far fa-pause-circle" id="pause-button" onclick="pauseButton();"></i>
 <i class="far fa-play-circle" id="play-button" onclick="playButton();"></i>
-<i class="fas fa-file-download" id="btnSave" ></i>
+<i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
 </div>
 <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->

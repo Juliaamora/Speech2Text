@@ -53,26 +53,35 @@ const downloadToFile = (content, filename, contentType) => {
 	URL.revokeObjectURL(a.href);
 };
 
-//document.querySelector('#cmd').addEventListener('click', () => {
-	//const textArea = document.querySelector('textarea');
 
-	//downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
-//})
-//als PDf speichern
+document.querySelector('#btnSave').click(savetxt)
+
+	function savetxt() {
+	const textArea = document.querySelector('textarea');
+
+	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
+};
+
+//als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefin
+
 let doc = new jsPDF();
 let specialElementHandlers = {
 	'#editor': function (element, renderer) {
 		return true;
 	}
 };
-$('#btnSavePDF').click(function () {
+$('#btnSavePDF').click(save)
+	
+	function save () {
 	doc.fromHTML(
 		$('#final').html(), 15, 15, {
 			'width': 170,
 			'elementHandlers': specialElementHandlers
 		});
 	doc.save('Reason.pdf');
-});
+}; 
+
+
 
 //Audiofile einbinden
 const realFileBtn = document.getElementById("real-file");
