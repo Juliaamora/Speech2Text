@@ -65,14 +65,18 @@ let specialElementHandlers = {
 		return true;
 	}
 };
-$('#btnSavePDF').click(function () {
+$('#btnSavePDF').click(save)
+	
+	function save () {
 	doc.fromHTML(
 		$('#final').html(), 15, 15, {
 			'width': 170,
 			'elementHandlers': specialElementHandlers
 		});
 	doc.save('Reason.pdf');
-});
+}; 
+
+
 
 //Audiofile einbinden
 const realFileBtn = document.getElementById("real-file");
