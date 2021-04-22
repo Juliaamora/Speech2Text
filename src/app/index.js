@@ -33,12 +33,6 @@ function pauseButton() {
 	document.getElementById('interim').innerHTML = "PAUSE";
 }
 
-function stopButton() {
-	console.log("Transkription pausiert");
-	speechElement.stop();
-	document.getElementById('interim').innerHTML = "STOP";
-}
-
 //Download
 const downloadToFile = (content, filename, contentType) => {
 	const a = document.createElement('a');
@@ -52,13 +46,9 @@ const downloadToFile = (content, filename, contentType) => {
 
 	URL.revokeObjectURL(a.href);
 };
-
-
-document.querySelector('#btnSave').click(savetxt)
-
+	
 	function savetxt() {
 	const textArea = document.querySelector('textarea');
-
 	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
 };
 
@@ -80,8 +70,6 @@ $('#btnSavePDF').click(save)
 		});
 	doc.save('Reason.pdf');
 }; 
-
-
 
 //Audiofile einbinden
 const realFileBtn = document.getElementById("real-file");
