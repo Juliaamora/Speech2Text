@@ -237,7 +237,7 @@ border: none;
 border-radius: 4px;
 }
 
-.final {
+.final, #neu{
 width: 100%;
 min-height: 35em;
 min-width: 35em;

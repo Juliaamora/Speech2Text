@@ -3,6 +3,7 @@ speechElement.lang = 'de-DE'; //Sprache
 speechElement.interimResults = true; //default-Wert = false; 
 speechElement.continuous = true; //Sprachsteuerung hört NICHT auf(continuous), wenn man aufhört zu sprechen
 let final_transcript = '';
+let test;
 
 speechElement.onstart = function liveTranscription() {}
 
@@ -17,20 +18,29 @@ speechElement.onresult = function liveTranscription(event) {
 			console.log("HalloELSE");
 		}
 	}
+	test=final_transcript;
 	document.getElementById('final').innerHTML = final_transcript;
 	document.getElementById('interim').innerHTML = interim_transcript;
+	
 }
+document.getElementById("final").innerHTML=test;
 
 function playButton() {
+	let combined = document.getElementById('final').innerHTML
+	document.getElementById("neu").innerHTML=combined;
+
+
 	console.log("Transkription startet");
 	speechElement.start();
 	document.getElementById('interim').innerHTML = "START";
+	console.log( "Es geht"+combined);
 }
 
 function pauseButton() {
 	console.log("Transkription pausiert");
 	speechElement.stop();
 	document.getElementById('interim').innerHTML = "PAUSE";
+	
 }
 
 //Download
