@@ -8,6 +8,36 @@ let span = document.createElement("p");
 const playButtonHTML = document.getElementById("play-button");
 let k=1;
 
+let speaker = "";
+
+function switchColor(color){
+    let test = color + ": " + document.getElementById('final').appendChild(span);
+	if(span.classList == "speaker"+color){
+		span = document.createElement('p');
+		console.log("remove");
+		span.classList.remove("speaker"+color);
+		final_transcript = "";
+        setSpeaker(color);
+	}else {
+		span = document.createElement('p');
+		console.log("addd");
+		span.classList.add("speaker"+color);
+		final_transcript = "";
+        setSpeaker(color);
+		}
+	}
+    function setSpeaker(color){
+        if(color == "red"){
+            speaker = "Sprecher1: <br>";
+        } else if(color == "purple"){
+            speaker = "Sprecher3: <br>";
+        } else if(color == "green"){
+            speaker = "Sprecher2: <br>";
+        }else{
+            speaker = "";
+        }
+    }
+
 speechElement.onstart = function liveTranscription() {}
 
 speechElement.onresult = function liveTranscription(event) {
@@ -21,7 +51,7 @@ speechElement.onresult = function liveTranscription(event) {
             console.log("HalloELSE");
         }
     }
-    span.innerHTML = final_transcript;
+    span.innerHTML = speaker + final_transcript;
 	document.getElementById('interim').innerText = interim_transcript;
 	document.getElementById('final').appendChild(span);
 }
@@ -137,16 +167,3 @@ $('input').on('change', function (e) {
     }
 });
 
-function switchColor(color){
-	if(span.classList == "speaker"+color){
-		span = document.createElement('p');
-		console.log("remove");
-		span.classList.remove("speaker"+color);
-		final_transcript = "";
-	}else {
-		span = document.createElement('p');
-		console.log("addd");
-		span.classList.add("speaker"+color);
-		final_transcript = "";
-		}
-	}
