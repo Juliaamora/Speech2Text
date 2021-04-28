@@ -88,7 +88,7 @@ function playButton() {
     
     } else{
 	k=1;
-    playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
+    playButtonHTML.classList.replace("fa-pause-circle", "fa-pause-circle");
     console.log("Transkription pausiert");
     speechElement.stop();
     document.getElementById('interim').innerHTML = "PAUSE";
