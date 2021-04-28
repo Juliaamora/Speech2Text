@@ -49,11 +49,10 @@ const downloadToFile = (content, filename, contentType) => {
 	
 	function savetxt() {
 	const textArea = document.querySelector('textarea');
-	downloadToFile(textArea.value, 'my-new-file.txt', 'text/plain');
+	downloadToFile(textArea.value, 'my-new-speechie.txt', 'text/plain');
 };
 
-//als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefin
-
+//als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefined
 let doc = new jsPDF();
 let specialElementHandlers = {
 	'#editor': function (element, renderer) {
@@ -68,7 +67,7 @@ $('#btnSavePDF').click(save)
 			'width': 170,
 			'elementHandlers': specialElementHandlers
 		});
-	doc.save('Reason.pdf');
+	doc.save('speechie.pdf');
 }; 
 
 //Audiofile einbinden
