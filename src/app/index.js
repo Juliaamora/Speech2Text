@@ -56,17 +56,7 @@ speechElement.onresult = function liveTranscription(event) {
 	document.getElementById('final').appendChild(span);
 }
 
-function playButton() {
-    console.log("Transkription startet");
-    speechElement.start();
-    document.getElementById('interim').innerHTML = "START";
-}
 
-function pauseButton() {
-    console.log("Transkription pausiert");
-    speechElement.stop();
-    document.getElementById('interim').innerHTML = "PAUSE";
-}
 
 //Download
 const downloadToFile = (content, filename, contentType) => {
@@ -90,19 +80,15 @@ const downloadToFile = (content, filename, contentType) => {
 
 function playButton() {
     if(k==1){
-    playButtonHTML.classList.remove("fa-play-circle");
-    playButtonHTML.classList.add("fa-pause-circle")
-    k=2;
-    console.log("IF geht");
+	k=2;
+    playButtonHTML.classList.replace("fa-play-circle", "fa-pause-circle");
     console.log("Transkription startet");
     speechElement.start();
     document.getElementById('interim').innerHTML = "START";
     
     } else{
-    playButtonHTML.classList.remove("fa-pause-circle");
-    playButtonHTML.classList.add("fa-play-circle")
-    k=1;
-    console.log("Else geht");
+	k=1;
+    playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
     console.log("Transkription pausiert");
     speechElement.stop();
     document.getElementById('interim').innerHTML = "PAUSE";
