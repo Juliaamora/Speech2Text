@@ -73,9 +73,9 @@ const downloadToFile = (content, filename, contentType) => {
 };
 
     
-    function savetxt() {
-    const textArea = document.querySelector('p');
-    downloadToFile(textArea.value, 'my-new-speechie.txt', 'text/plain');
+function savetxt() {
+    const textArea = document.querySelector('#final').innerText;
+    downloadToFile(textArea, 'my-new-speechie.txt', 'text/plain');
 };
 
 function playButton() {
