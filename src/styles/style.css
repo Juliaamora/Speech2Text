@@ -200,16 +200,10 @@ transform: translate(-50%, -50%);
 }
 */
 
-#pause-button{
-position: relative;
-left: 50%;
-top: 50%;
-cursor: pointer;
-font-size: 40px;
-}
+
 #play-button{
 position: relative;
-left: 34%;
+left: 44%;
 top: 50%;
 cursor: pointer;
 font-size: 40px;
@@ -275,7 +269,12 @@ i:hover{
 color: #326ff0;
 }
 
-
+.green{
+    background-color: green;
+}
+.red{
+    background-color: red;
+}
 
 *,*:after,*:before{
 -webkit-box-sizing: border-box;
