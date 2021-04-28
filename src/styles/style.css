@@ -184,7 +184,7 @@ font-weight: 600;
 padding: 10px 0;
 }
 p{
-font-size: 30px;
+font-size: 15px;
 font-weight: 500;
 }
 
@@ -264,7 +264,6 @@ border-radius: 2px;
 font-size: 16px;
 }
 
-
 i:hover{
 color: #326ff0;
 }
@@ -316,4 +315,14 @@ margin-bottom: 20px;
 
 .audiobar{
 margin-bottom: 15px;
+}
+
+.speakerred {
+    color: red;
+}
+.speakergreen {
+    color: green;
+}
+.speakerpurple {
+    color: purple;
 }

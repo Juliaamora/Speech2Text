@@ -3,6 +3,8 @@ speechElement.lang = 'de-DE'; //Sprache
 speechElement.interimResults = true; //default-Wert = false; 
 speechElement.continuous = true; //Sprachsteuerung hört NICHT auf(continuous), wenn man aufhört zu sprechen
 let final_transcript = '';
+let interim_transcript;
+let span = document.createElement("p");
 const playButtonHTML = document.getElementById("play-button");
 let k=1;
 
@@ -19,8 +21,9 @@ speechElement.onresult = function liveTranscription(event) {
             console.log("HalloELSE");
         }
     }
-    document.getElementById('final').innerHTML = final_transcript;
-    document.getElementById('interim').innerHTML = interim_transcript;
+    span.innerHTML = final_transcript;
+	document.getElementById('interim').innerText = interim_transcript;
+	document.getElementById('final').appendChild(span);
 }
 
 function playButton() {
@@ -133,3 +136,17 @@ $('input').on('change', function (e) {
         reader.readAsDataURL(file);
     }
 });
+
+function switchColor(color){
+	if(span.classList == "speaker"+color){
+		span = document.createElement('p');
+		console.log("remove");
+		span.classList.remove("speaker"+color);
+		final_transcript = "";
+	}else {
+		span = document.createElement('p');
+		console.log("addd");
+		span.classList.add("speaker"+color);
+		final_transcript = "";
+		}
+	}
