@@ -48,6 +48,7 @@ const downloadToFile = (content, filename, contentType) => {
 
     URL.revokeObjectURL(a.href);
 };
+
     
     function savetxt() {
     const textArea = document.querySelector('textarea');
@@ -77,6 +78,7 @@ function playButton() {
     
     }
 
+
 //als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefined
 let doc = new jsPDF();
 let specialElementHandlers = {
@@ -85,6 +87,7 @@ let specialElementHandlers = {
     }
 };
 $('#btnSavePDF').click(save)
+
     
     function save () {
     doc.fromHTML(
@@ -92,8 +95,8 @@ $('#btnSavePDF').click(save)
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
-    doc.save('speechie.pdf');
-}; 
+    doc.save('speechie.pdf');}
+
 
 //Audiofile einbinden
 const realFileBtn = document.getElementById("real-file");
