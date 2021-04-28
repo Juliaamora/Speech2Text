@@ -23,18 +23,18 @@ function switchColor(color){
 		console.log("addd");
 		span.classList.add("speaker"+color);
 		final_transcript = "";
-        setSpeaker(color);
+        setSpeaker("speaker"+color);
 		}
 	}
-    function setSpeaker(color){
-        if(color == "red"){
+    function setSpeaker(wort){
+        if(wort == "speakerred"){
             speaker = "Sprecher1: <br>";
-        } else if(color == "purple"){
+        } else if(wort == "speakerpurple"){
             speaker = "Sprecher3: <br>";
-        } else if(color == "green"){
+        } else if(wort == "speakergreen"){
             speaker = "Sprecher2: <br>";
         }else{
-            speaker = "";
+            speaker = " ";
         }
     }
 
@@ -74,7 +74,7 @@ const downloadToFile = (content, filename, contentType) => {
 
     
     function savetxt() {
-    const textArea = document.querySelector('textarea');
+    const textArea = document.querySelector('p');
     downloadToFile(textArea.value, 'my-new-speechie.txt', 'text/plain');
 };
 
@@ -88,7 +88,7 @@ function playButton() {
     
     } else{
 	k=1;
-    playButtonHTML.classList.replace("fa-pause-circle", "fa-pause-circle");
+    playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
     console.log("Transkription pausiert");
     speechElement.stop();
     document.getElementById('interim').innerHTML = "PAUSE";
