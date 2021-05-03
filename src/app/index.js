@@ -3,8 +3,41 @@ speechElement.lang = 'de-DE'; //Sprache
 speechElement.interimResults = true; //default-Wert = false; 
 speechElement.continuous = true; //Sprachsteuerung hört NICHT auf(continuous), wenn man aufhört zu sprechen
 let final_transcript = '';
+let interim_transcript;
+let span = document.createElement("p");
 const playButtonHTML = document.getElementById("play-button");
-let k=1;
+let k = 1;
+
+let speaker = "";
+
+function switchColor(color) {
+    let test = color + ": " + document.getElementById('final').appendChild(span);
+    if (span.classList == "speaker" + color) {
+        span = document.createElement('p');
+        console.log("remove");
+        span.classList.remove("speaker" + color);
+        final_transcript = "";
+        setSpeaker(color);
+    } else {
+        span = document.createElement('p');
+        console.log("addd");
+        span.classList.add("speaker" + color);
+        final_transcript = "";
+        setSpeaker("speaker" + color);
+    }
+}
+
+function setSpeaker(wort) {
+    if (wort == "speakerred") {
+        speaker = "Sprecher1: <br>";
+    } else if (wort == "speakerpurple") {
+        speaker = "Sprecher3: <br>";
+    } else if (wort == "speakergreen") {
+        speaker = "Sprecher2: <br>";
+    } else {
+        speaker = " ";
+    }
+}
 
 speechElement.onstart = function liveTranscription() {}
 
@@ -19,21 +52,12 @@ speechElement.onresult = function liveTranscription(event) {
             console.log("HalloELSE");
         }
     }
-    document.getElementById('final').innerHTML = final_transcript;
-    document.getElementById('interim').innerHTML = interim_transcript;
+    span.innerHTML = speaker + final_transcript;
+    document.getElementById('interim').innerText = interim_transcript;
+    document.getElementById('final').appendChild(span);
 }
 
-function playButton() {
-    console.log("Transkription startet");
-    speechElement.start();
-    document.getElementById('interim').innerHTML = "START";
-}
 
-function pauseButton() {
-    console.log("Transkription pausiert");
-    speechElement.stop();
-    document.getElementById('interim').innerHTML = "PAUSE";
-}
 
 //Download
 const downloadToFile = (content, filename, contentType) => {
@@ -49,34 +73,30 @@ const downloadToFile = (content, filename, contentType) => {
     URL.revokeObjectURL(a.href);
 };
 
-    
-    function savetxt() {
-    const textArea = document.querySelector('textarea');
-    downloadToFile(textArea.value, 'my-new-speechie.txt', 'text/plain');
+
+function savetxt() {
+    const textArea = document.querySelector('#final').innerText;
+    downloadToFile(textArea, 'my-new-speechie.txt', 'text/plain');
 };
 
 function playButton() {
-    if(k==1){
-    playButtonHTML.classList.remove("fa-play-circle");
-    playButtonHTML.classList.add("fa-pause-circle")
-    k=2;
-    console.log("IF geht");
-    console.log("Transkription startet");
-    speechElement.start();
-    document.getElementById('interim').innerHTML = "START";
-    
-    } else{
-    playButtonHTML.classList.remove("fa-pause-circle");
-    playButtonHTML.classList.add("fa-play-circle")
-    k=1;
-    console.log("Else geht");
-    console.log("Transkription pausiert");
-    speechElement.stop();
-    document.getElementById('interim').innerHTML = "PAUSE";
-    
+    if (k == 1) {
+        k = 2;
+        playButtonHTML.classList.replace("fa-play-circle", "fa-pause-circle");
+        console.log("Transkription startet");
+        speechElement.start();
+        document.getElementById('interim').innerHTML = "START";
+
+    } else {
+        k = 1;
+        playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
+        console.log("Transkription pausiert");
+        speechElement.stop();
+        document.getElementById('interim').innerHTML = "PAUSE";
+
     }
-    
-    }
+
+}
 
 
 //als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefined
@@ -88,14 +108,15 @@ let specialElementHandlers = {
 };
 $('#btnSavePDF').click(save)
 
-    
-    function save () {
+
+function save() {
     doc.fromHTML(
         $('#final').html(), 15, 15, {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
-    doc.save('speechie.pdf');}
+    doc.save('speechie.pdf');
+}
 
 
 //Audiofile einbinden
