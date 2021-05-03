@@ -6,37 +6,38 @@ let final_transcript = '';
 let interim_transcript;
 let span = document.createElement("p");
 const playButtonHTML = document.getElementById("play-button");
-let k=1;
+let k = 1;
 
 let speaker = "";
 
-function switchColor(color){
+function switchColor(color) {
     let test = color + ": " + document.getElementById('final').appendChild(span);
-	if(span.classList == "speaker"+color){
-		span = document.createElement('p');
-		console.log("remove");
-		span.classList.remove("speaker"+color);
-		final_transcript = "";
+    if (span.classList == "speaker" + color) {
+        span = document.createElement('p');
+        console.log("remove");
+        span.classList.remove("speaker" + color);
+        final_transcript = "";
         setSpeaker(color);
-	}else {
-		span = document.createElement('p');
-		console.log("addd");
-		span.classList.add("speaker"+color);
-		final_transcript = "";
-        setSpeaker("speaker"+color);
-		}
-	}
-    function setSpeaker(wort){
-        if(wort == "speakerred"){
-            speaker = "Sprecher1: <br>";
-        } else if(wort == "speakerpurple"){
-            speaker = "Sprecher3: <br>";
-        } else if(wort == "speakergreen"){
-            speaker = "Sprecher2: <br>";
-        }else{
-            speaker = " ";
-        }
+    } else {
+        span = document.createElement('p');
+        console.log("addd");
+        span.classList.add("speaker" + color);
+        final_transcript = "";
+        setSpeaker("speaker" + color);
     }
+}
+
+function setSpeaker(wort) {
+    if (wort == "speakerred") {
+        speaker = "Sprecher1: <br>";
+    } else if (wort == "speakerpurple") {
+        speaker = "Sprecher3: <br>";
+    } else if (wort == "speakergreen") {
+        speaker = "Sprecher2: <br>";
+    } else {
+        speaker = " ";
+    }
+}
 
 speechElement.onstart = function liveTranscription() {}
 
@@ -52,8 +53,8 @@ speechElement.onresult = function liveTranscription(event) {
         }
     }
     span.innerHTML = speaker + final_transcript;
-	document.getElementById('interim').innerText = interim_transcript;
-	document.getElementById('final').appendChild(span);
+    document.getElementById('interim').innerText = interim_transcript;
+    document.getElementById('final').appendChild(span);
 }
 
 
@@ -72,30 +73,30 @@ const downloadToFile = (content, filename, contentType) => {
     URL.revokeObjectURL(a.href);
 };
 
-    
+
 function savetxt() {
     const textArea = document.querySelector('#final').innerText;
     downloadToFile(textArea, 'my-new-speechie.txt', 'text/plain');
 };
 
 function playButton() {
-    if(k==1){
-	k=2;
-    playButtonHTML.classList.replace("fa-play-circle", "fa-pause-circle");
-    console.log("Transkription startet");
-    speechElement.start();
-    document.getElementById('interim').innerHTML = "START";
-    
-    } else{
-	k=1;
-    playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
-    console.log("Transkription pausiert");
-    speechElement.stop();
-    document.getElementById('interim').innerHTML = "PAUSE";
-    
+    if (k == 1) {
+        k = 2;
+        playButtonHTML.classList.replace("fa-play-circle", "fa-pause-circle");
+        console.log("Transkription startet");
+        speechElement.start();
+        document.getElementById('interim').innerHTML = "START";
+
+    } else {
+        k = 1;
+        playButtonHTML.classList.replace("fa-pause-circle", "fa-play-circle");
+        console.log("Transkription pausiert");
+        speechElement.stop();
+        document.getElementById('interim').innerHTML = "PAUSE";
+
     }
-    
-    }
+
+}
 
 
 //als PDf speichern -->CAVE nur 1mal ausführbar error. toFixed undefined
@@ -107,14 +108,15 @@ let specialElementHandlers = {
 };
 $('#btnSavePDF').click(save)
 
-    
-    function save () {
+
+function save() {
     doc.fromHTML(
         $('#final').html(), 15, 15, {
             'width': 170,
             'elementHandlers': specialElementHandlers
         });
-    doc.save('speechie.pdf');}
+    doc.save('speechie.pdf');
+}
 
 
 //Audiofile einbinden
@@ -152,4 +154,3 @@ $('input').on('change', function (e) {
         reader.readAsDataURL(file);
     }
 });
-
