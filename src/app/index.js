@@ -109,44 +109,54 @@ function save() {
     elementHandlers: specialElementHandlers,
   });
   doc.save('speechie.pdf');
-}
+  /* =======
+    doc.fromHTML(
+        $('#final').html(), 15, 15, {
+            'width': 170,
+            //'elementHandlers': specialElementHandlers
+        });
+    doc.save('speechie.pdf');
+>>>>>>> f7f62f398aa15954d3deb26a4b659940f22dcfdf
+} */
 
-//Audiofile einbinden
-const realFileBtn = document.getElementById('real-file');
-const customBtn = document.getElementById('openFile');
-const customTxt = document.getElementById('custom-text');
+  //Audiofile einbinden
+  const realFileBtn = document.getElementById('real-file');
+  const customBtn = document.getElementById('openFile');
+  const customTxt = document.getElementById('custom-text');
 
-customBtn.addEventListener('click', function () {
-  realFileBtn.click();
-});
+  customBtn.addEventListener('click', function () {
+    realFileBtn.click();
+  });
 
-realFileBtn.addEventListener('change', function () {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = 'No file chosen, yet.';
-  }
-});
+  realFileBtn.addEventListener('change', function () {
+    if (realFileBtn.value) {
+      customTxt.innerHTML = realFileBtn.value.match(
+        /[\/\\]([\w\d\s\.\-\(\)]+)$/
+      )[1];
+    } else {
+      customTxt.innerHTML = 'No file chosen, yet.';
+    }
+  });
 
-let $audio = $('#myAudio');
-$('input').on('change', function (e) {
-  let target = e.currentTarget;
-  let file = target.files[0];
-  let reader = new FileReader();
-
-  console.log($audio[0]);
-  if (target.files && file) {
+  let $audio = $('#myAudio');
+  $('input').on('change', function (e) {
+    let target = e.currentTarget;
+    let file = target.files[0];
     let reader = new FileReader();
-    reader.onload = function (e) {
-      $audio.attr('src', e.target.result);
-      $audio.play();
-    };
-    reader.readAsDataURL(file);
-  }
-});
+
+    console.log($audio[0]);
+    if (target.files && file) {
+      let reader = new FileReader();
+      reader.onload = function (e) {
+        $audio.attr('src', e.target.result);
+        $audio.play();
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('dark');
+  console.log('test');
 });

@@ -404,7 +404,7 @@ audio {
 }
 
 .checkbox:checked + .label .ball {
-  transform: translateX(16px);
+  transform: translateX(18px);
 }
 
 .fa-moon {
@@ -417,8 +417,8 @@ audio {
   font-size: 10px;
 }
 
-body.dark {
-  background: #2c2c2c;
+body.bright {
+  background: #000000;
   transition: 0.2s;
 }
 
