@@ -113,7 +113,7 @@ function save() {
     doc.fromHTML(
         $('#final').html(), 15, 15, {
             'width': 170,
-            'elementHandlers': specialElementHandlers
+            //'elementHandlers': specialElementHandlers
         });
     doc.save('speechie.pdf');
 }
