@@ -278,6 +278,7 @@ textarea {
   top: 50%;
   cursor: pointer;
   font-size: 40px;
+  
 }
 
 #btnSave {
@@ -321,6 +322,10 @@ i:hover {
 
 .speakerpurple {
   color: purple;
+}
+
+.clicked {
+    text-shadow: 0 0 10px black;
 }
 
 /*__________________Darkmode___________________*/

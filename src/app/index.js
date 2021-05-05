@@ -9,6 +9,10 @@ const playButtonHTML = document.getElementById('play-button');
 let saveButton = document.querySelector('#btnSave');
 let audioText = document.querySelector('#custom-text');
 let change = document.getElementById('change');
+let redBtn = document.getElementById('redBtn');
+let greenBtn = document.getElementById('greenBtn');
+let purpleBtn = document.getElementById('purpleBtn');
+
 let k = 1;
 
 let speaker = '';
@@ -21,12 +25,14 @@ function switchColor(color) {
     span.classList.remove('speaker' + color);
     final_transcript = '';
     setSpeaker(color);
+    showChosenColor(color);
   } else {
     span = document.createElement('p');
     console.log('addd');
     span.classList.add('speaker' + color);
     final_transcript = '';
     setSpeaker('speaker' + color);
+    showChosenColor(color);
   }
 }
 
@@ -38,9 +44,17 @@ function setSpeaker(wort) {
   } else if (wort == 'speakergreen') {
     speaker = 'Sprecher2: <br>';
   } else {
-    speaker = ' ';
+    speaker = ' <br>';
   }
 }
+
+function showChosenColor(color) {
+    if(document.getElementById(color+'Btn').classList.contains('clicked')){
+        document.getElementById(color+'Btn').classList.remove('clicked');
+    } else {
+        document.getElementById(color+'Btn').classList.add('clicked');
+    }
+  };
 
 speechElement.onstart = function liveTranscription() {};
 
