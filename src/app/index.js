@@ -154,3 +154,68 @@ $('input').on('change', function (e) {
         reader.readAsDataURL(file);
     }
 });
+
+//Anleitung
+
+const tutorial = document.querySelector("#tutorial");
+const roboter = document.querySelector("#roboter");
+let infoText = document.querySelector("#info-text");
+
+function startTutorial() {
+    console.log("test");
+    roboter.classList.replace("hidden","roboter-visible");
+}
+
+var clicks = 0;
+function onClick() {
+  clicks += 1;
+  changePosition();
+};
+
+function changePosition () {
+    console.log("changePosition")
+    if(clicks===1){
+        step1()
+    } else if(clicks===2) {
+        step2()
+    } else if(clicks===3) {
+        step3()
+    } else if(clicks===4) {
+        step4()
+    } else if(clicks===5) {
+        step5()
+    }
+}
+
+function step1() {
+    console.log("weiter");
+    roboter.classList.replace("roboter-visible","roboter-step1");
+    setInfoText("test1 blablablbla");
+}
+function step2() {
+    console.log("weiter2");
+    roboter.classList.replace("roboter-step1","roboter-step2");
+    setInfoText("test2 blablablbla");
+}
+function step3() {
+    console.log("weiter3");
+    roboter.classList.replace("roboter-step2","roboter-step3");
+    setInfoText("test3 blablablbla");
+}
+function step4() {
+    console.log("weiter4");
+    roboter.classList.replace("roboter-step3","roboter-step4");
+    setInfoText("test4 blablablbla");
+}
+function step5() {
+    console.log("weiter5");
+    roboter.classList.replace("roboter-visible","roboter-step5");
+    setInfoText("test5 blablablbla");
+}
+
+
+
+
+function setInfoText(text) {
+    infoText.innerHTML = text;
+    }
