@@ -6,6 +6,8 @@ let final_transcript = '';
 let interim_transcript;
 let span = document.createElement('p');
 const playButtonHTML = document.getElementById('play-button');
+let saveButton = document.querySelector('#btnSave');
+let audioText = document.querySelector('#custom-text');
 let change = document.getElementById('change');
 let k = 1;
 
@@ -158,5 +160,7 @@ function save() {
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('dark');
-  console.log('test');
+  saveButton.classList.toggle('darkbuttons');
+  playButtonHTML.classList.toggle('darkbuttons');
+  audioText.classList.toggle('darkAudioText');
 });

@@ -12,6 +12,8 @@ body {
   background: #ffffff;
 }
 
+/*__________________Navigationsleiste groß___________________*/
+
 nav {
   background: #326ff0;
 }
@@ -98,18 +100,6 @@ nav ul ul li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-nav ul ul li a {
-  line-height: 50px;
-}
-
-nav ul ul ul li {
-  position: relative;
-  top: -70px;
-  left: 200px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  z-index: 100;
-}
-
 .show,
 .icon,
 input {
@@ -120,6 +110,8 @@ input {
   font-size: 15px;
   margin-left: 40px;
 }
+
+/*__________________Navigationsleiste klein___________________*/
 
 @media all and (max-width: 968px) {
   nav ul {
@@ -206,6 +198,29 @@ input {
   }
 }
 
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*__________________Audio___________________*/
+audio {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: -100;
+}
+
+.audiobar {
+  margin-bottom: 15px;
+}
+
+/*__________________Transkriptions-Container___________________*/
 .content {
   z-index: -1;
   position: absolute;
@@ -215,51 +230,13 @@ input {
   text-align: center;
 }
 
-header {
-  font-size: 35px;
-  font-weight: 600;
-  padding: 10px 0;
+.interim {
+  margin-bottom: 20px;
 }
 
 p {
   font-size: 15px;
   font-weight: 500;
-}
-
-/*#transcription{
-width: 40%;
-height: 80%;
-background-color: rgb(255, 255, 255);
-padding: 50px;
-position: absolute;
-top: 55%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-*/
-
-#play-button {
-  position: relative;
-  left: 44%;
-  top: 50%;
-  cursor: pointer;
-  font-size: 40px;
-}
-
-#stop-button {
-  position: relative;
-  left: 52%;
-  top: 50%;
-  cursor: pointer;
-  font-size: 40px;
-}
-
-#btnSave {
-  position: relative;
-  top: 50%;
-  cursor: pointer;
-  font-size: 40px;
-  float: left;
 }
 
 fieldset {
@@ -293,69 +270,45 @@ textarea {
   border: 5px solid #326ff0;
 }
 
-button {
-  display: block;
-  margin: 1em 0 0;
-  border: 1px solid dark;
-  padding: 0.75em;
-  line-height: 1;
-  border-radius: 2px;
-  font-size: 16px;
+/*__________________Untere Buttonleite___________________*/
+
+#play-button {
+  position: relative;
+  left: 42%;
+  top: 50%;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+#btnSave {
+  position: relative;
+  top: 50%;
+  cursor: pointer;
+  font-size: 40px;
+  float: left;
 }
 
 i:hover {
-  color: #326ff0;
+  text-shadow: 0 0 10px #326ff0;
 }
 
-.green {
-  background-color: green;
-}
-
-.red {
-  background-color: red;
-}
-
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-/*button{
-padding: 10px 25px;
-font-size: 22px;
-line-height: 40px;
-min-width: 150px;
-text-align: center;
-cursor: pointer;
-background: linear-gradient(to right bottom,#273c75,#079992);
-color: #fff;
-border-radius: 5px;
-border:0px;
-height: 60px;
-}*/
-
-audio {
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: relative;
-  z-index: -100;
+.colorbutton {
+  font-size: 30px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .buttons {
+  justify-content: center;
+  display: flex;
   position: relative;
 }
 
-.interim {
-  margin-bottom: 20px;
-}
-
-.audiobar {
-  margin-bottom: 15px;
+.coloredButtons {
+  padding: 10px;
+  margin-left: 60%;
+  background-color: lightgrey;
+  border-radius: 50px;
 }
 
 .speakerred {
@@ -369,6 +322,8 @@ audio {
 .speakerpurple {
   color: purple;
 }
+
+/*__________________Darkmode___________________*/
 
 .checkbox {
   opacity: 0;
@@ -417,11 +372,19 @@ audio {
   font-size: 10px;
 }
 
-body.bright {
-  background: #000000;
+body.dark {
+  background: #2a2a2a;
   transition: 0.2s;
 }
 
 .darkmode {
   padding-left: -230px;
+}
+
+.darkbuttons {
+  color: white;
+}
+
+.darkAudioText {
+  color: white;
 }

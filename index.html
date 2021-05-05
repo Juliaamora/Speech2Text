@@ -38,19 +38,9 @@
           <a href="#">Datei</a>
           <input type="checkbox" id="btn-1" />
           <ul>
-            <li id="openFile"><a href="#">Öffnen</a></li>
-            <li><a href="#">Zuletzt verwendete öffnen</a></li>
-            <li><a href="#" onclick="savetxt();">Speichern</a></li>
-            <li>
-              <a href="#">Speichern unter</a>
-              <ul>
-                <li><a href="#" onclick="savetxt();">als txt-Datei</a></li>
-                <li><a href="#" onclick="save();">als PDF-Datei</a></li>
-                <li><a href="#">Submenu-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Exportieren</a></li>
-            <li><a href="#">Exportieren als</a></li>
+            <li id="openFile"><a href="#">Audio-Datei öffnen</a></li>
+            <li><a href="#" onclick="savetxt();">Speichern als TXT</a></li>
+            <li><a href="#" onclick="save()">Exportieren als PDF</a></li>
             <li><a href="#">Eigenschaften</a></li>
           </ul>
         </li>
@@ -80,27 +70,29 @@
       <textarea id="interim" class="interim"></textarea>
 
       <div class="buttons">
+        <i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
         <i
           class="far fa-play-circle"
           id="play-button"
           onclick="playButton();"
         ></i>
-        <i class="fas fa-file-download" id="btnSave" onclick="savetxt();"></i>
-        <i
-          class="fas fa-circle speakerred"
-          id="testBtn"
-          onclick="switchColor('red');"
-        ></i>
-        <i
-          class="fas fa-circle speakergreen"
-          id="testBtn2"
-          onclick="switchColor('green');"
-        ></i>
-        <i
-          class="fas fa-circle speakerpurple"
-          id="testBtn3"
-          onclick="switchColor('purple');"
-        ></i>
+        <div class="coloredButtons">
+          <i
+            class="fas fa-circle speakerred colorbutton"
+            id="testBtn1"
+            onclick="switchColor('red');"
+          ></i>
+          <i
+            class="fas fa-circle speakergreen colorbutton"
+            id="testBtn2"
+            onclick="switchColor('green');"
+          ></i>
+          <i
+            class="fas fa-circle speakerpurple colorbutton"
+            id="testBtn3"
+            onclick="switchColor('purple');"
+          ></i>
+        </div>
       </div>
       <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->
