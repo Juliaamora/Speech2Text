@@ -227,8 +227,6 @@ function setInfoText(text) {
     infoText.innerHTML = text;
     }
 
-  });
-}
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('dark');
@@ -236,4 +234,4 @@ change.addEventListener('change', () => {
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
 });
-
+}

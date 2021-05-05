@@ -213,7 +213,7 @@ input {
 p {
     font-size: 15px;
     font-weight: 500;
-
+}
 *,
 *:after,
 *:before {
@@ -441,7 +441,7 @@ i:hover {
 }
 .roboter-step5 {
     top: 100%;
-
+}
   
 .checkbox:checked + .label .ball {
   transform: translateX(18px);
