@@ -187,41 +187,57 @@ function changePosition () {
         step4()
     } else if(clicks===5) {
         step5()
-    }
+    } else if(clicks===6) {
+        step6()
+    } else if(clicks===7) {
+        step7()
+    } else if(clicks===8) {
+        step8()
+    } 
 }
 
+
 function step1() {
-    console.log("weiter");
+    console.log("weiter1");
     roboter.classList.replace("roboter-visible","roboter-step1");
-    setInfoText("Einleitung");
+    setInfoText("Hier kannst du die Transkription starten und pausieren.");
 }
 function step2() {
     console.log("weiter2");
     roboter.classList.replace("roboter-step1","roboter-step2");
-    setInfoText("Hier kannst du die Transkription starten und pausieren.");
+    setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
 }
 function step3() {
     console.log("weiter3");
     roboter.classList.replace("roboter-step2","roboter-step3");
-    setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
+    setInfoText("Hier oben steht dann dein endgültiger Text.");
 }
 function step4() {
     console.log("weiter4");
     roboter.classList.replace("roboter-step3","roboter-step4");
-    setInfoText("Hier oben steht dann dein endgültiger Text.");
+    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
 }
+
 function step5() {
     console.log("weiter5");
-    roboter.classList.replace("roboter-visible4","roboter-step5");
-    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
+    setInfoText("Diese Funktion ist ebenfalls durch das Menü erreichbar unter: Datei > Speichern"); 
 }
 
 function step6() {
     console.log("weiter6");
-    roboter.classList.replace("roboter-visible5","roboter-step6");
-    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann dirket bearbeiten");
+    roboter.classList.replace("roboter-step4","roboter-step6");
+    setInfoText("Hier kannst unter Datei > Öffnen Audiodateien öffnen und abspielen lassen");
 }
-
+function step7() {
+    console.log("weiter6");
+    roboter.classList.replace("roboter-step6","roboter-step7");
+    setInfoText("Oh, deine Freunde sind auch mit dabei? Hiermit kannst du die Sprecher im Text unterschiedlich darstellen");
+}
+function step8() {
+    console.log("weiter6");
+    roboter.classList.replace("roboter-step7","roboter-visible");
+    setInfoText("Alles klar? Dann kann es ja losgehen!");
+}
 
 
 function setInfoText(text) {
