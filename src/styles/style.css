@@ -1,230 +1,229 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    user-select: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background: #ffffff;
+  background: #ffffff;
 }
 
 nav {
-    background: #326ff0;
+  background: #326ff0;
 }
 
 nav:after {
-    content: '';
-    clear: both;
-    display: table;
+  content: '';
+  clear: both;
+  display: table;
 }
 
 nav .logo {
-    float: left;
-    color: white;
-    padding-left: 60px;
-    padding-top: 15px;
+  float: left;
+  color: white;
+  padding-left: 60px;
+  padding-top: 15px;
 }
 
 nav .speechie {
-    font-family: 'Syne', sans-serif;
-    float: left;
-    color: white;
-    font-size: 35px;
-    padding-left: 10px;
-    padding-top: 15px;
+  font-family: 'Syne', sans-serif;
+  float: left;
+  color: white;
+  font-size: 35px;
+  padding-left: 10px;
+  padding-top: 15px;
 }
 
 nav ul {
-    float: right;
-    margin-right: 40px;
-    list-style: none;
-    position: relative;
+  float: right;
+  margin-right: 40px;
+  list-style: none;
+  position: relative;
 }
 
 nav ul li {
-    float: left;
-    display: inline-block;
-    background: #326ff0;
-    margin: 0 5px;
+  float: left;
+  display: inline-block;
+  background: #326ff0;
+  margin: 0 5px;
 }
 
 nav ul li a {
-    color: white;
-    line-height: 70px;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px 15px;
+  color: white;
+  line-height: 70px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 15px;
 }
 
 nav ul li a:hover {
-    color: cyan;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #33ffff,
-        0 0 10px #66ffff;
+  color: cyan;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
 }
 
 nav ul ul li a:hover {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 nav ul ul {
-    position: absolute;
-    top: 90px;
-    border-top: 3px solid cyan;
-    opacity: 0;
-    visibility: hidden;
-    transition: top .3s;
+  position: absolute;
+  top: 90px;
+  border-top: 3px solid cyan;
+  opacity: 0;
+  visibility: hidden;
+  transition: top 0.3s;
 }
 
 nav ul ul ul {
-    border-top: none;
+  border-top: none;
 }
 
-nav ul li:hover>ul {
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
+nav ul li:hover > ul {
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
 }
 
 nav ul ul li {
-    position: relative;
-    margin: 0px;
-    width: auto;
-    float: none;
-    display: list-item;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin: 0px;
+  width: auto;
+  float: none;
+  display: list-item;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 nav ul ul li a {
-    line-height: 50px;
+  line-height: 50px;
 }
 
 nav ul ul ul li {
-    position: relative;
-    top: -70px;
-    left: 200px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    z-index: 100;
+  position: relative;
+  top: -70px;
+  left: 200px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  z-index: 100;
 }
 
 .show,
 .icon,
 input {
-    display: none;
+  display: none;
 }
 
 .fa-plus {
-    font-size: 15px;
-    margin-left: 40px;
+  font-size: 15px;
+  margin-left: 40px;
 }
 
 @media all and (max-width: 968px) {
-    nav ul {
-        margin-right: 0px;
-        float: left;
-    }
+  nav ul {
+    margin-right: 0px;
+    float: left;
+  }
 
-    nav .logo {
-        padding-left: 30px;
-        width: 100%;
-    }
+  nav .logo {
+    padding-left: 30px;
+    width: 100%;
+  }
 
-    .show+a,
-    ul {
-        display: none;
-    }
+  .show + a,
+  ul {
+    display: none;
+  }
 
-    nav ul li,
-    nav ul ul li {
-        display: block;
-        width: 100%;
-    }
+  nav ul li,
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
 
-    nav ul li a:hover {
-        box-shadow: none;
-    }
+  nav ul li a:hover {
+    box-shadow: none;
+  }
 
-    .show {
-        display: block;
-        color: white;
-        font-size: 18px;
-        padding: 0 20px;
-        line-height: 70px;
-        cursor: pointer;
-    }
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
 
-    .show:hover {
-        color: cyan;
-    }
+  .show:hover {
+    color: cyan;
+  }
 
-    .icon {
-        display: block;
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 40px;
-        line-height: 70px;
-        cursor: pointer;
-        font-size: 25px;
-    }
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    line-height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+  }
 
-    nav ul ul {
-        top: 70px;
-        border-top: 0px;
-        float: none;
-        position: static;
-        display: none;
-        opacity: 1;
-        visibility: visible;
-    }
+  nav ul ul {
+    top: 70px;
+    border-top: 0px;
+    float: none;
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
 
-    nav ul ul a {
-        padding-left: 40px;
-    }
+  nav ul ul a {
+    padding-left: 40px;
+  }
 
-    nav ul ul ul a {
-        padding-left: 80px;
-    }
+  nav ul ul ul a {
+    padding-left: 80px;
+  }
 
-    nav ul ul ul li {
-        position: static;
-    }
+  nav ul ul ul li {
+    position: static;
+  }
 
-    [id^=btn]:checked+ul {
-        display: block;
-    }
+  [id^='btn']:checked + ul {
+    display: block;
+  }
 
-    nav ul ul li {
-        border-bottom: 0px;
-    }
+  nav ul ul li {
+    border-bottom: 0px;
+  }
 
-    span.cancel:before {
-        content: '\f00d';
-    }
+  span.cancel:before {
+    content: '\f00d';
+  }
 }
 
 .content {
-    z-index: -1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 header {
-    font-size: 35px;
-    font-weight: 600;
-    padding: 10px 0;
+  font-size: 35px;
+  font-weight: 600;
+  padding: 10px 0;
 }
 
 p {
-    font-size: 15px;
-    font-weight: 500;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 /*#transcription{
@@ -239,93 +238,91 @@ transform: translate(-50%, -50%);
 }
 */
 
-
 #play-button {
-    position: relative;
-    left: 44%;
-    top: 50%;
-    cursor: pointer;
-    font-size: 40px;
+  position: relative;
+  left: 44%;
+  top: 50%;
+  cursor: pointer;
+  font-size: 40px;
 }
 
 #stop-button {
-    position: relative;
-    left: 52%;
-    top: 50%;
-    cursor: pointer;
-    font-size: 40px;
+  position: relative;
+  left: 52%;
+  top: 50%;
+  cursor: pointer;
+  font-size: 40px;
 }
 
 #btnSave {
-    position: relative;
-    top: 50%;
-    cursor: pointer;
-    font-size: 40px;
-    float: left;
+  position: relative;
+  top: 50%;
+  cursor: pointer;
+  font-size: 40px;
+  float: left;
 }
 
 fieldset {
-    max-width: 30%;
-    margin: 1em auto;
-    padding: 2em;
-    border: none;
-    border-radius: 4px;
+  max-width: 30%;
+  margin: 1em auto;
+  padding: 2em;
+  border: none;
+  border-radius: 4px;
 }
 
 .final {
-    width: 100%;
-    min-height: 35em;
-    min-width: 35em;
-    display: block;
-    border: 5px solid #326ff0;
-    border-radius: 4px;
-    padding: 2em;
-    background-color: white;
+  width: 100%;
+  min-height: 35em;
+  min-width: 35em;
+  display: block;
+  border: 5px solid #326ff0;
+  border-radius: 4px;
+  padding: 2em;
+  background-color: white;
 }
 
 textarea {
-    width: 100%;
-    min-height: 12em;
-    min-width: 55em;
-    display: block;
-    border: 1px solid #999;
-    border-radius: 4px;
-    padding: 2em;
-    background-color: rgb(228, 228, 228);
-    border: 5px solid #326ff0;
+  width: 100%;
+  min-height: 12em;
+  min-width: 55em;
+  display: block;
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 2em;
+  background-color: rgb(228, 228, 228);
+  border: 5px solid #326ff0;
 }
 
 button {
-    display: block;
-    margin: 1em 0 0;
-    border: 1px solid dark;
-    padding: 0.75em;
-    line-height: 1;
-    border-radius: 2px;
-    font-size: 16px;
+  display: block;
+  margin: 1em 0 0;
+  border: 1px solid dark;
+  padding: 0.75em;
+  line-height: 1;
+  border-radius: 2px;
+  font-size: 16px;
 }
 
 i:hover {
-    color: #326ff0;
+  color: #326ff0;
 }
 
 .green {
-    background-color: green;
+  background-color: green;
 }
 
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 *,
 *:after,
 *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 /*button{
 padding: 10px 25px;
@@ -342,33 +339,89 @@ height: 60px;
 }*/
 
 audio {
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: relative;
-    z-index: -100;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  z-index: -100;
 }
 
 .buttons {
-    position: relative;
+  position: relative;
 }
 
 .interim {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .audiobar {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .speakerred {
-    color: red;
+  color: red;
 }
 
 .speakergreen {
-    color: green;
+  color: green;
 }
 
 .speakerpurple {
-    color: purple;
+  color: purple;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  margin-left: 10px;
+  margin-top: 60px;
+  background-color: #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 18px;
+  width: 35px;
+  transform: scale(1.5);
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 15px;
+  width: 15px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(16px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+  font-size: 10px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 10px;
+}
+
+body.dark {
+  background: #2c2c2c;
+  transition: 0.2s;
+}
+
+.darkmode {
+  padding-left: -230px;
 }
