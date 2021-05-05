@@ -155,7 +155,8 @@ function save() {
       reader.readAsDataURL(file);
     }
 
-});
+})
+}
 
 //Anleitung
 
@@ -234,4 +235,4 @@ change.addEventListener('change', () => {
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
 });
-}
+
