@@ -190,29 +190,34 @@ function changePosition () {
 function step1() {
     console.log("weiter");
     roboter.classList.replace("roboter-visible","roboter-step1");
-    setInfoText("test1 blablablbla");
+    setInfoText("Einleitung");
 }
 function step2() {
     console.log("weiter2");
     roboter.classList.replace("roboter-step1","roboter-step2");
-    setInfoText("test2 blablablbla");
+    setInfoText("Hier kannst du die Transkription starten und pausieren.");
 }
 function step3() {
     console.log("weiter3");
     roboter.classList.replace("roboter-step2","roboter-step3");
-    setInfoText("test3 blablablbla");
+    setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
 }
 function step4() {
     console.log("weiter4");
     roboter.classList.replace("roboter-step3","roboter-step4");
-    setInfoText("test4 blablablbla");
+    setInfoText("Hier oben steht dann dein endgültiger Text.");
 }
 function step5() {
     console.log("weiter5");
-    roboter.classList.replace("roboter-visible","roboter-step5");
-    setInfoText("test5 blablablbla");
+    roboter.classList.replace("roboter-visible4","roboter-step5");
+    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
 }
 
+function step6() {
+    console.log("weiter6");
+    roboter.classList.replace("roboter-visible5","roboter-step6");
+    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann dirket bearbeiten");
+}
 
 
 
