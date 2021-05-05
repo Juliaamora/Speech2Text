@@ -111,14 +111,13 @@ function save() {
     elementHandlers: specialElementHandlers,
   });
   doc.save('speechie.pdf');
-  /* =======
+  /* 
     doc.fromHTML(
         $('#final').html(), 15, 15, {
             'width': 170,
             //'elementHandlers': specialElementHandlers
         });
     doc.save('speechie.pdf');
->>>>>>> f7f62f398aa15954d3deb26a4b659940f22dcfdf
 } */
 
   //Audiofile einbinden
@@ -155,6 +154,79 @@ function save() {
       };
       reader.readAsDataURL(file);
     }
+
+});
+
+//Anleitung
+
+const tutorial = document.querySelector("#tutorial");
+const roboter = document.querySelector("#roboter");
+let infoText = document.querySelector("#info-text");
+
+function startTutorial() {
+    console.log("test");
+    roboter.classList.replace("hidden","roboter-visible");
+}
+
+var clicks = 0;
+function onClick() {
+  clicks += 1;
+  changePosition();
+};
+
+function changePosition () {
+    console.log("changePosition")
+    if(clicks===1){
+        step1()
+    } else if(clicks===2) {
+        step2()
+    } else if(clicks===3) {
+        step3()
+    } else if(clicks===4) {
+        step4()
+    } else if(clicks===5) {
+        step5()
+    }
+}
+
+function step1() {
+    console.log("weiter");
+    roboter.classList.replace("roboter-visible","roboter-step1");
+    setInfoText("Einleitung");
+}
+function step2() {
+    console.log("weiter2");
+    roboter.classList.replace("roboter-step1","roboter-step2");
+    setInfoText("Hier kannst du die Transkription starten und pausieren.");
+}
+function step3() {
+    console.log("weiter3");
+    roboter.classList.replace("roboter-step2","roboter-step3");
+    setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
+}
+function step4() {
+    console.log("weiter4");
+    roboter.classList.replace("roboter-step3","roboter-step4");
+    setInfoText("Hier oben steht dann dein endgültiger Text.");
+}
+function step5() {
+    console.log("weiter5");
+    roboter.classList.replace("roboter-visible4","roboter-step5");
+    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
+}
+
+function step6() {
+    console.log("weiter6");
+    roboter.classList.replace("roboter-visible5","roboter-step6");
+    setInfoText("Hier kannst du deine txt-Datei herunterladen und dann dirket bearbeiten");
+}
+
+
+
+function setInfoText(text) {
+    infoText.innerHTML = text;
+    }
+
   });
 }
 
@@ -164,3 +236,4 @@ change.addEventListener('change', () => {
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
 });
+
