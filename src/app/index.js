@@ -49,14 +49,17 @@ function setSpeaker(wort) {
 }
 
 function showChosenColor(color) {
-    if(redBtn.classList.contains('clicked') || greenBtn.classList.contains('clicked') || purpleBtn.classList.contains('clicked')){
+  if( document.getElementById(color+'Btn').classList.contains('clicked')){
+    document.getElementById(color+'Btn').classList.remove('clicked');
+  }  
+  else if(redBtn.classList.contains('clicked') || greenBtn.classList.contains('clicked') || purpleBtn.classList.contains('clicked')){
         redBtn.classList.remove('clicked');
         greenBtn.classList.remove('clicked');
         purpleBtn.classList.remove('clicked');
-        redBtn.classList.add('clicked');
-    }/* else {
         document.getElementById(color+'Btn').classList.add('clicked');
-    }*/
+    }else {
+        document.getElementById(color+'Btn').classList.add('clicked');
+    }
   };
 
 speechElement.onstart = function liveTranscription() {};
