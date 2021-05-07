@@ -466,9 +466,9 @@ i:hover {
   left: 3%;
 }
 
-#clicks:hover{
+#clicks:hover, .fa-times-circle:hover{
     cursor: pointer;
-    color: red;
+    color: #0171bd;
 }
 
 .roboter-step1 {
