@@ -15,7 +15,7 @@ body {
 /*__________________Navigationsleiste groß___________________*/
 
 nav {
-  background: #326ff0;
+  background: #0171bd;
 }
 
 nav:after {
@@ -50,7 +50,7 @@ nav ul {
 nav ul li {
   float: left;
   display: inline-block;
-  background: #326ff0;
+  background: #0171bd;
   margin: 0 5px;
 }
 
@@ -269,7 +269,7 @@ fieldset {
   min-height: 35em;
   min-width: 35em;
   display: block;
-  border: 5px solid #326ff0;
+  border: 5px solid #0171bd;
   border-radius: 4px;
   padding: 2em;
   background-color: white;
@@ -284,7 +284,7 @@ textarea {
   border-radius: 4px;
   padding: 2em;
   background-color: rgb(228, 228, 228);
-  border: 5px solid #326ff0;
+  border: 5px solid #0171bd;
 }
 
 /*__________________Untere Buttonleite___________________*/
@@ -306,7 +306,7 @@ textarea {
 }
 
 i:hover {
-  text-shadow: 0 0 10px #326ff0;
+  text-shadow: 0 0 10px #0171bd;
 }
 
 .colorbutton {
