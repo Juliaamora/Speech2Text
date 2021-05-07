@@ -422,6 +422,8 @@ i:hover {
     position: absolute;
     top: 2px;
     left: 33%;
+    background: none;
+    border: none;
 }
 #speechie-robot {
     width: 100%;
@@ -431,6 +433,8 @@ i:hover {
     overflow: scroll;
     height: 100%;
     overflow-wrap: break-word;
+    background: none;
+    border: none;
 }
 .hidden {
     visibility: hidden;
@@ -453,6 +457,13 @@ i:hover {
     background-color: none;
     bottom: 0;
     right: 3%;
+}
+.fa-times-circle{
+  position: absolute;
+  border-style: none;
+  background-color: none;
+  bottom: 0;
+  left: 3%;
 }
 
 #clicks:hover{
