@@ -16,6 +16,9 @@ body {
 
 nav {
   background: #0171bd;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
 }
 
 nav:after {
@@ -36,8 +39,6 @@ nav .speechie {
   float: left;
   color: white;
   font-size: 35px;
-  padding-left: 10px;
-  padding-top: 15px;
 }
 
 nav ul {
@@ -198,21 +199,26 @@ input {
   }
 }
 
-
 #pulse:hover {
-    animation: pulse 1s infinite;
-    animation-timing-function: linear;
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% {transform: scale(1);}
-    }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 p {
-    font-size: 15px;
-    font-weight: 500;
+  font-size: 15px;
+  font-weight: 500;
 }
 *,
 *:after,
@@ -221,7 +227,6 @@ p {
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-
 }
 
 /*__________________Audio___________________*/
@@ -258,9 +263,9 @@ p {
 
 fieldset {
   max-width: 30%;
-  margin: 1em auto;
-  padding: 2em;
+  margin: auto;
   border: none;
+  padding-top: 3em;
   border-radius: 4px;
 }
 
@@ -380,115 +385,129 @@ i:hover {
   transition: transform 0.2s linear;
 }
 
-
 .checkbox:checked + .label .ball {
-    transform: translateX(18px);
-  }
-  
-  .fa-moon {
-    color: #f1c40f;
-    font-size: 10px;
-  }
-  
-  .fa-sun {
-    color: #f39c12;
-    font-size: 10px;
-  }
-  
-  body.dark {
-    background: #2a2a2a;
-    transition: 0.2s;
-  }
-  
-  .darkmode {
-    padding-left: -230px;
-  }
-  
-  .darkbuttons {
-    color: white;
-  }
-  
-  .darkAudioText {
-    color: white;
-  }
-  
+  transform: translateX(18px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+  font-size: 10px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 10px;
+}
+
+body.dark {
+  background: #2a2a2a;
+  transition: 0.2s;
+}
+
+.darkmode {
+  padding-left: -230px;
+}
+
+.darkbuttons {
+  color: white;
+}
+
+.darkAudioText {
+  color: white;
+}
 
 /*Roboter*/
 
 #roboter {
-    position: absolute;
-    width: 400px;
-    height: auto;
-    display: flex;
+  position: absolute;
+  width: 400px;
+  height: auto;
+  display: flex;
 }
 #text-area {
-    height: 42%;
-    width: 65%;
-    position: absolute;
-    top: 2px;
-    left: 33%;
+  height: 42%;
+  width: 65%;
+  position: absolute;
+  top: 2px;
+  left: 33%;
 }
 #speechie-robot {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 #info-text {
-    overflow: scroll;
-    height: 100%;
-    overflow-wrap: break-word;
+  overflow: scroll;
+  height: 100%;
+  overflow-wrap: break-word;
 }
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .roboter-visible {
-    visibility: visible;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%);
-    top: 350px;
-    left: 1000px;
- 
+  visibility: visible;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%);
+  top: 350px;
+  left: 1000px;
 }
 
 #clicks {
-    position: absolute;
-    border-style: none;
-    background-color: none;
-    bottom: 0;
-    right: 3%;
+  position: absolute;
+  border-style: none;
+  background-color: none;
+  bottom: 0;
+  right: 3%;
 }
 
-#clicks:hover{
-    cursor: pointer;
-    color: red;
+#clicks:hover {
+  cursor: pointer;
+  color: red;
 }
 
 .roboter-step1 {
-    left: 650px;
-    top: 850px;
-  
+  left: 650px;
+  top: 850px;
 }
 .roboter-step2 {
-    top: 700px;
-    left: 330px;
+  top: 700px;
+  left: 330px;
 }
 .roboter-step3 {
-    top: 450px;
-    left: 330px;
+  top: 450px;
+  left: 330px;
 }
 .roboter-step4 {
-    top: 850px;
-    left: 18%;
+  top: 850px;
+  left: 18%;
 }
 
 .roboter-step6 {
-    top: 20px;
-    left: 570px;
+  top: 20px;
+  left: 570px;
 }
 
 .roboter-step7 {
-    top: 850px;
-    left: 870px;
+
+  top: 850px;
+  left: 870px;
+}
+
+.mdn-logo {
+  width: 10%;
+  height: 10%;
+  padding-top: 5px;
+  float: left;
+}
+
+.speechie-logo {
+  display: flex;
+  padding-right: 2px;
+}
+
+.speechie {
+  margin-left: 50%;
+  display: flex;
 }
