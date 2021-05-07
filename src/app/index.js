@@ -26,6 +26,7 @@ function switchColor(color) {
     final_transcript = '';
     setSpeaker(color);
     showChosenColor(color);
+    console.log(showChosenColor);
   } else {
     span = document.createElement('p');
     console.log('addd');
@@ -33,6 +34,7 @@ function switchColor(color) {
     final_transcript = '';
     setSpeaker('speaker' + color);
     showChosenColor(color);
+    console.log(showChosenColor);
   }
 }
 
@@ -51,14 +53,17 @@ function setSpeaker(wort) {
 function showChosenColor(color) {
   if( document.getElementById(color+'Btn').classList.contains('clicked')){
     document.getElementById(color+'Btn').classList.remove('clicked');
+    console.log("if");
   }  
   else if(redBtn.classList.contains('clicked') || greenBtn.classList.contains('clicked') || purpleBtn.classList.contains('clicked')){
         redBtn.classList.remove('clicked');
         greenBtn.classList.remove('clicked');
         purpleBtn.classList.remove('clicked');
         document.getElementById(color+'Btn').classList.add('clicked');
+        console.log("if else");
     }else {
         document.getElementById(color+'Btn').classList.add('clicked');
+        console.log("else");
     }
   };
 
