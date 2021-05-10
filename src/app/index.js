@@ -77,14 +77,17 @@ speechElement.onresult = function liveTranscription(event) {
     if (event.results[i].isFinal) {
       final_transcript += event.results[i][0].transcript;
       console.log('HalloIF');
+      
     } else {
       interim_transcript += event.results[i][0].transcript;
       console.log('HalloELSE');
+      
     }
   }
   span.innerHTML = speaker + final_transcript;
   document.getElementById('interim').innerText = interim_transcript;
   document.getElementById('final').appendChild(span);
+  updateScroll();
 };
 
 //Download
@@ -279,3 +282,7 @@ change.addEventListener('change', () => {
   summary.classList.toggle('darkSummary')
 });
 
+function updateScroll(){
+  let element = document.getElementById('final');
+  element.scrollTop = element.scrollHeight;
+}
