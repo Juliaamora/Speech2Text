@@ -24,13 +24,7 @@
 
   <body>
     <nav>
-      <div class="logo">
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API"><img class="mdn-logo" src="../assets/MDN_Web_Docs.svg.png"/></a>
-        <div class="speechie">
-          <a href="/index.html"><img class="speechie-logo" src="../assets/speechie2.png"/></a>
-          speechie
-        </div>
-      </div>
+      
       <label for="btn" class="icon">
         <span class="fa fa-bars"></span>
       </label>
@@ -52,11 +46,18 @@
         </li>
         <li><a href="#">Kontakt</a></li>
       </ul>
+      <div class="logo">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API"><img class="mdn-logo" src="../assets/MDN_Web_Docs.svg.png"/></a>
+
+        <div class="speechie">
+          <a href="/index.html"><img class="speechie-logo" src="../assets/speechie2.png"/></a>
+          speechie
+        </div>
+      </div>
     </nav>
 
       <fieldset>
-
-      <div id="final" class="final"></div>
+      <div id="final" class="final" ></div>
       <div id="editor"></div>
       <br />
       <textarea id="interim" class="interim"></textarea>
@@ -71,20 +72,25 @@
         <div class="coloredButtons">
           <i
             class="fas fa-circle speakerred colorbutton"
-            id="testBtn1"
+            id="redBtn"
             onclick="switchColor('red');"
           ></i>
           <i
             class="fas fa-circle speakergreen colorbutton"
-            id="testBtn2"
+            id="greenBtn"
             onclick="switchColor('green');"
           ></i>
           <i
             class="fas fa-circle speakerpurple colorbutton"
-            id="testBtn3"
+            id="purpleBtn"
             onclick="switchColor('purple');"
           ></i>
         </div>
+      </div>
+      <div class="audiobar">
+        <audio controls id="myAudio" autoplay></audio>
+        <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+        <div class= "custom-text" id="custom-text">No file chosen, yet.</div>
       </div>
       <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->
@@ -97,11 +103,6 @@
         <i class="fas fa-moon"></i>
         <div class="ball"></div>
       </label>
-    </div>
-    <div class="audiobar">
-      <audio controls id="myAudio" autoplay></audio>
-      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-      <div class= "custom-text" id="custom-text">No file chosen, yet.</div>
     </div>
 
     <div id="roboter" class="hidden">

@@ -20,7 +20,9 @@ nav {
   position: fixed;
   z-index: 100;
   top: 0px;
+  min-width: 950px;
 }
+
 
 nav:after {
   content: '';
@@ -29,10 +31,11 @@ nav:after {
 }
 
 nav .logo {
-  float: left;
+  /*float: left;*/
   color: white;
   padding-left: 60px;
   padding-top: 15px;
+  display: flex;
 }
 
 nav .speechie {
@@ -50,7 +53,6 @@ nav ul {
 }
 
 nav ul li {
-  float: left;
   display: inline-block;
   background: #0171bd;
   margin: 0 5px;
@@ -113,134 +115,16 @@ input {
   margin-left: 40px;
 }
 
-/*__________________Navigationsleiste klein___________________*/
-
-@media all and (max-width: 968px) {
-  nav ul {
-    margin-right: 0px;
-    float: left;
-  }
-
-  nav .logo {
-    padding-left: 30px;
-    width: 100%;
-  }
-
-  .show + a,
-  ul {
-    display: none;
-  }
-
-  nav ul li,
-  nav ul ul li {
-    display: block;
-    width: 100%;
-  }
-
-  nav ul li a:hover {
-    box-shadow: none;
-  }
-
-  .show {
-    display: block;
-    color: white;
-    font-size: 18px;
-    padding: 0 20px;
-    line-height: 70px;
-    cursor: pointer;
-  }
-
-  .show:hover {
-    color: cyan;
-  }
-
-  .icon {
-    display: block;
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 40px;
-    line-height: 70px;
-    cursor: pointer;
-    font-size: 25px;
-  }
-
-  nav ul ul {
-    top: 70px;
-    border-top: 0px;
-    float: none;
-    position: static;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  nav ul ul a {
-    padding-left: 40px;
-  }
-
-  nav ul ul ul a {
-    padding-left: 80px;
-  }
-
-  nav ul ul ul li {
-    position: static;
-  }
-
-  [id^='btn']:checked + ul {
-    display: block;
-  }
-
-  nav ul ul li {
-    border-bottom: 0px;
-  }
-
-  span.cancel:before {
-    content: '\f00d';
-  }
-}
-
-#pulse:hover {
-  animation: pulse 1s infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-p {
-  font-size: 15px;
-  font-weight: 500;
-}
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 /*__________________Audio___________________*/
 audio {
-  right: 5%;
   transform: translate(-50%, -50%);
   position: relative;
 
 }
 
 .audiobar {
-  padding-left: 90%;
-  margin-top: -790px;
+  top: 40px;
+  padding-left: 50%;
   position: relative;
 }
 
@@ -248,13 +132,12 @@ audio {
   margin-top: -20px;
   margin-left: -60px;
   position: relative;
-
 }
 
 /*__________________Transkriptions-Container___________________*/
 .content {
   z-index: -1;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -274,7 +157,7 @@ fieldset {
   max-width: 30%;
   margin: auto;
   border: none;
-  padding-top: 5%;
+  padding-top: 100px;
   border-radius: 4px;
 }
 
@@ -310,38 +193,38 @@ textarea {
   cursor: pointer;
   font-size: 40px;
   
-}
-
-#btnSave {
+  }
+  
+  #btnSave {
   position: relative;
   top: 50%;
   cursor: pointer;
   font-size: 40px;
   float: left;
-}
-
-i:hover {
+  }
+  
+  i:hover {
   text-shadow: 0 0 10px #0171bd;
-}
-
-.colorbutton {
+  }
+  
+  .colorbutton {
   font-size: 30px;
   margin-right: 15px;
   margin-left: 15px;
-}
-
-.buttons {
+  }
+  
+  .buttons {
   justify-content: center;
   display: flex;
   position: relative;
-}
-
-.coloredButtons {
+  }
+  
+  .coloredButtons {
   padding: 10px;
   margin-left: 60%;
   background-color: lightgrey;
   border-radius: 50px;
-}
+  }
 
 .speakerred {
   color: red;
@@ -368,7 +251,7 @@ i:hover {
 
 .label {
   margin-left: 30px;
-  margin-top: -810px;
+  margin-top: -880px;
   background-color: #999;
   border-radius: 50px;
   cursor: pointer;
@@ -499,13 +382,13 @@ body.dark {
 }
 
 .roboter-step7 {
+
   top: 850px;
   left: 870px;
 }
 
 .mdn-logo {
-  width: 10%;
-  height: 10%;
+  width: 150px;
   padding-top: 5px;
   float: left;
 }
@@ -516,6 +399,7 @@ body.dark {
 }
 
 .speechie {
-  margin-left: 50%;
   display: flex;
+  margin: auto;
+  padding-left: 170px;
 }
