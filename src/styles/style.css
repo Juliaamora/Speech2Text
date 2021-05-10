@@ -17,7 +17,13 @@ body {
 
 nav {
   background: #0171bd;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  min-width: 950px;
 }
+
 
 nav:after {
   content: '';
@@ -26,10 +32,11 @@ nav:after {
 }
 
 nav .logo {
-  float: left;
+  /*float: left;*/
   color: white;
   padding-left: 60px;
   padding-top: 15px;
+  display: flex;
 }
 
 nav .speechie {
@@ -37,8 +44,6 @@ nav .speechie {
   float: left;
   color: white;
   font-size: 35px;
-  padding-left: 10px;
-  padding-top: 15px;
 }
 
 nav ul {
@@ -49,7 +54,6 @@ nav ul {
 }
 
 nav ul li {
-  float: left;
   display: inline-block;
   background: #0171bd;
   margin: 0 5px;
@@ -116,124 +120,38 @@ input {
   color: #0171bd;
 }
 
-/*__________________Navigationsleiste klein___________________*/
-
-@media all and (max-width: 968px) {
-  nav ul {
-    margin-right: 0px;
-    float: left;
-  }
-
-  nav .logo {
-    padding-left: 30px;
-    width: 100%;
-  }
-
-  .show + a,
-  ul {
-    display: none;
-  }
-
-  nav ul li,
-  nav ul ul li {
-    display: block;
-    width: 100%;
-  }
-
-  nav ul li a:hover {
-    box-shadow: none;
-  }
-
-  .show {
-    display: block;
-    color: white;
-    font-size: 18px;
-    padding: 0 20px;
-    line-height: 70px;
-    cursor: pointer;
-  }
-
-  .show:hover {
-    color: cyan;
-  }
-
-  .icon {
-    display: block;
-    color: white;
-    position: absolute;
-    top: 0;
-    right: 40px;
-    line-height: 70px;
-    cursor: pointer;
-    font-size: 25px;
-  }
-
-  nav ul ul {
-    top: 70px;
-    border-top: 0px;
-    float: none;
-    position: static;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  nav ul ul a {
-    padding-left: 40px;
-  }
-
-  nav ul ul ul a {
-    padding-left: 80px;
-  }
-
-  nav ul ul ul li {
-    position: static;
-  }
-
-  [id^='btn']:checked + ul {
-    display: block;
-  }
-
-  nav ul ul li {
-    border-bottom: 0px;
-  }
-
-  span.cancel:before {
-    content: '\f00d';
-  }
-}
-
-p {
-    font-size: 15px;
-    font-weight: 500;
-}
-*,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-
-}
-
 /*__________________Audio___________________*/
 audio {
-  top: 5%;
-  left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  z-index: -100;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 5px solid #0171bd ;
+  width: 200%;
+  margin-top: 10px;
 }
 
 .audiobar {
-  margin-bottom: 15px;
+  top: 15px;
+  padding-left: 50%;
+  position: relative;
+}
+
+.custom-text{
+  margin-top: -35px;
+  margin-left: -360px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+audio::-webkit-media-controls-panel{
+  background-color: rgb(255, 255, 255);
 }
 
 /*__________________Transkriptions-Container___________________*/
 .content {
   z-index: -1;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -245,20 +163,21 @@ audio {
 }
 
 p {
-  font-size: 15px;
+  font-size: 35px;
   font-weight: 500;
 }
 
 fieldset {
   max-width: 30%;
-  margin: 1em auto;
-  padding: 2em;
+  margin: auto;
   border: none;
+  padding-top: 100px;
   border-radius: 4px;
 }
 
 .final {
   width: 100%;
+  max-height: 500px;
   min-height: 35em;
   min-width: 35em;
   display: block;
@@ -266,6 +185,9 @@ fieldset {
   border-radius: 4px;
   padding: 2em;
   background-color: white;
+  overflow-y: auto;
+  
+  
 }
 
 textarea {
@@ -288,38 +210,39 @@ textarea {
   top: 50%;
   cursor: pointer;
   font-size: 40px;
-}
-
-#btnSave {
+  
+  }
+  
+  #btnSave {
   position: relative;
   top: 50%;
   cursor: pointer;
   font-size: 40px;
   float: left;
-}
-
-i:hover {
+  }
+  
+  i:hover {
   text-shadow: 0 0 10px #0171bd;
-}
-
-.colorbutton {
+  }
+  
+  .colorbutton {
   font-size: 30px;
   margin-right: 15px;
   margin-left: 15px;
-}
-
-.buttons {
+  }
+  
+  .buttons {
   justify-content: center;
   display: flex;
   position: relative;
-}
-
-.coloredButtons {
-  padding: 10px;
-  margin-left: 60%;
+  }
+  
+  .coloredButtons {
+  padding: 5px;
+  margin-left: 62%;
   background-color: lightgrey;
   border-radius: 50px;
-}
+  }
 
 .speakerred {
   color: red;
@@ -333,16 +256,19 @@ i:hover {
   color: purple;
 }
 
+.clicked {
+    text-shadow: 0 0 10px black;
+}
+
 /*__________________Darkmode___________________*/
 
 .checkbox {
   opacity: 0;
-  position: absolute;
 }
 
 .label {
-  margin-left: 10px;
-  margin-top: 60px;
+  margin-left: 30px;
+  margin-top: -900px;
   background-color: #999;
   border-radius: 50px;
   cursor: pointer;
@@ -350,10 +276,10 @@ i:hover {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  position: relative;
   height: 18px;
   width: 35px;
   transform: scale(1.5);
+  position: absolute;
 }
 
 .label .ball {
@@ -368,61 +294,67 @@ i:hover {
   transition: transform 0.2s linear;
 }
 
-
 .checkbox:checked + .label .ball {
-    transform: translateX(18px);
-  }
-  
-  .fa-moon {
-    color: #f1c40f;
-    font-size: 10px;
-  }
-  
-  .fa-sun {
-    color: #f39c12;
-    font-size: 10px;
-  }
-  
-  body.dark {
-    background: #2a2a2a;
-    transition: 0.2s;
-  }
-  
-  .darkmode {
-    padding-left: -230px;
-  }
-  
-  .darkbuttons {
-    color: white;
-  }
-  
-  .darkAudioText {
-    color: white;
-  }
-  
+  transform: translateX(18px);
+}
+
+.fa-moon {
+  color: #f1c40f;
+  font-size: 10px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  font-size: 10px;
+}
+
+body.dark {
+  background: #2a2a2a;
+  transition: 0.2s;
+}
+details.dark {
+  color: #f3f3f3;
+}
+
+.darkmode {
+  padding-left: -230px;
+  position: relative;
+  padding-top: 80px;
+}
+
+.darkbuttons {
+  color: white;
+}
+
+.darkAudioText {
+  color: white;
+}
+
+.darkSummary{
+  color: white;
+}
 
 /*Roboter*/
 
 #roboter {
-    position: absolute;
-    width: 400px;
-    height: auto;
-    display: flex;
+  position: absolute;
+  width: 400px;
+  height: auto;
+  display: flex;
 }
 #text-area {
-    height: 42%;
-    width: 65%;
-    position: absolute;
-    top: 2px;
-    left: 33%;
-    background: none;
-    border: none;
+  height: 42%;
+  width: 65%;
+  position: absolute;
+  top: 2px;
+  left: 33%;
 }
 #speechie-robot {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 #info-text {
+
     overflow: scroll;
     height: 100%;
     overflow-wrap: break-word;
@@ -431,26 +363,25 @@ i:hover {
     margin: 5px;
 }
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .roboter-visible {
-    visibility: visible;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%);
-    top: 350px;
-    left: 1000px;
- 
+  visibility: visible;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%);
+  top: 350px;
+  left: 1000px;
 }
 
 #clicks {
-    position: absolute;
-    border-style: none;
-    background-color: none;
-    bottom: 0;
-    right: 3%;
+  position: absolute;
+  border-style: none;
+  background-color: none;
+  bottom: 0;
+  right: 3%;
 }
 .fa-times-circle{
   position: absolute;
@@ -463,34 +394,38 @@ i:hover {
 #clicks:hover, .fa-times-circle:hover{
     cursor: pointer;
     color: #0171bd;
+
+#clicks:hover {
+  cursor: pointer;
+  color: red;
 }
 
 .roboter-step1 {
-    left: 650px;
-    top: 850px;
-  
+  left: 650px;
+  top: 850px;
 }
 .roboter-step2 {
-    top: 700px;
-    left: 330px;
+  top: 700px;
+  left: 330px;
 }
 .roboter-step3 {
-    top: 450px;
-    left: 330px;
+  top: 450px;
+  left: 330px;
 }
 .roboter-step4 {
-    top: 850px;
-    left: 18%;
+  top: 850px;
+  left: 18%;
 }
 
 .roboter-step6 {
-    top: 20px;
-    left: 570px;
+  top: 20px;
+  left: 570px;
 }
 
 .roboter-step7 {
-    top: 850px;
-    left: 870px;
+
+  top: 850px;
+  left: 870px;
 }
 
 .pulse{ 
@@ -555,4 +490,20 @@ i:hover {
 }
 
 
-  
+.mdn-logo {
+  width: 150px;
+  padding-top: 5px;
+  float: left;
+}
+
+
+.speechie-logo {
+  display: flex;
+  padding-right: 2px;
+}
+
+.speechie {
+  display: flex;
+  margin: auto;
+  padding-left: 170px;
+}

@@ -8,7 +8,12 @@ let span = document.createElement('p');
 const playButtonHTML = document.getElementById('play-button');
 let saveButton = document.querySelector('#btnSave');
 let audioText = document.querySelector('#custom-text');
+let summary = document.querySelector('summary')
 let change = document.getElementById('change');
+let redBtn = document.getElementById('redBtn');
+let greenBtn = document.getElementById('greenBtn');
+let purpleBtn = document.getElementById('purpleBtn');
+
 let k = 1;
 const interim = document.querySelector('.interim');
 const final = document.querySelector('.final');
@@ -27,12 +32,16 @@ function switchColor(color) {
     span.classList.remove('speaker' + color);
     final_transcript = '';
     setSpeaker(color);
+    showChosenColor(color);
+    console.log(showChosenColor);
   } else {
     span = document.createElement('p');
     console.log('addd');
     span.classList.add('speaker' + color);
     final_transcript = '';
     setSpeaker('speaker' + color);
+    showChosenColor(color);
+    console.log(showChosenColor);
   }
 }
 
@@ -44,9 +53,26 @@ function setSpeaker(wort) {
   } else if (wort == 'speakergreen') {
     speaker = 'Sprecher2: <br>';
   } else {
-    speaker = ' ';
+    speaker = ' <br>';
   }
 }
+
+function showChosenColor(color) {
+  if( document.getElementById(color+'Btn').classList.contains('clicked')){
+    document.getElementById(color+'Btn').classList.remove('clicked');
+    console.log("if");
+  }  
+  else if(redBtn.classList.contains('clicked') || greenBtn.classList.contains('clicked') || purpleBtn.classList.contains('clicked')){
+        redBtn.classList.remove('clicked');
+        greenBtn.classList.remove('clicked');
+        purpleBtn.classList.remove('clicked');
+        document.getElementById(color+'Btn').classList.add('clicked');
+        console.log("if else");
+    }else {
+        document.getElementById(color+'Btn').classList.add('clicked');
+        console.log("else");
+    }
+  };
 
 speechElement.onstart = function liveTranscription() {};
 
@@ -57,14 +83,17 @@ speechElement.onresult = function liveTranscription(event) {
     if (event.results[i].isFinal) {
       final_transcript += event.results[i][0].transcript;
       console.log('HalloIF');
+      
     } else {
       interim_transcript += event.results[i][0].transcript;
       console.log('HalloELSE');
+      
     }
   }
   span.innerHTML = speaker + final_transcript;
   document.getElementById('interim').innerText = interim_transcript;
   document.getElementById('final').appendChild(span);
+  updateScroll();
 };
 
 //Download
@@ -130,9 +159,9 @@ function save() {
   const realFileBtn = document.getElementById('real-file');
   const customBtn = document.getElementById('openFile');
   const customTxt = document.getElementById('custom-text');
-
+  
   customBtn.addEventListener('click', function () {
-    realFileBtn.click();
+  realFileBtn.click();
   });
 
   realFileBtn.addEventListener('change', function () {
@@ -284,20 +313,17 @@ function step9() {
   document.documentElement.scrollTop = 0;
 }
 
-
 function setInfoText(text) {
     infoText.innerHTML = text;
     }
-
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('dark');
   saveButton.classList.toggle('darkbuttons');
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
+  summary.classList.toggle('darkSummary')
 });
-
-document.documentElement.scrollTop;
 
 const anleitung = document.querySelector('.anleitung');
 const closeButtonAnleitung = document.querySelector('.fa-times-circle');
@@ -315,4 +341,8 @@ window.addEventListener("load", refresh);
 function refresh() {
   anleitung.classList.add('hidden');
   console.log("refresh")
+
+function updateScroll(){
+  let element = document.getElementById('final');
+  element.scrollTop = element.scrollHeight;
 }
