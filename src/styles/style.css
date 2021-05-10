@@ -119,19 +119,27 @@ input {
 audio {
   transform: translate(-50%, -50%);
   position: relative;
-
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 5px solid #0171bd ;
+  width: 200%;
 }
 
 .audiobar {
-  top: 40px;
+  top: 15px;
   padding-left: 50%;
   position: relative;
 }
 
 .custom-text{
-  margin-top: -20px;
-  margin-left: -60px;
+  margin-top: -35px;
+  margin-left: -360px;
   position: relative;
+  padding-bottom: 10px;
+}
+
+audio::-webkit-media-controls-panel{
+  background-color: rgb(255, 255, 255);
 }
 
 /*__________________Transkriptions-Container___________________*/
@@ -220,8 +228,8 @@ textarea {
   }
   
   .coloredButtons {
-  padding: 10px;
-  margin-left: 60%;
+  padding: 5px;
+  margin-left: 62%;
   background-color: lightgrey;
   border-radius: 50px;
   }

@@ -149,9 +149,9 @@ function save() {
   const realFileBtn = document.getElementById('real-file');
   const customBtn = document.getElementById('openFile');
   const customTxt = document.getElementById('custom-text');
-
+  
   customBtn.addEventListener('click', function () {
-    realFileBtn.click();
+  realFileBtn.click();
   });
 
   realFileBtn.addEventListener('change', function () {

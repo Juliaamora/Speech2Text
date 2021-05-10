@@ -57,6 +57,12 @@
     </nav>
 
       <fieldset>
+        <div class="audiobar">
+          <audio controls id="myAudio" autoplay></audio>
+          <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+          <div class= "custom-text" id="custom-text">No file chosen, yet.</div>
+        </div>
+
       <div id="final" class="final" ></div>
       <div id="editor"></div>
       <br />
@@ -86,11 +92,6 @@
             onclick="switchColor('purple');"
           ></i>
         </div>
-      </div>
-      <div class="audiobar">
-        <audio controls id="myAudio" autoplay></audio>
-        <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-        <div class= "custom-text" id="custom-text">No file chosen, yet.</div>
       </div>
       <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->
