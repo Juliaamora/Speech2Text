@@ -372,8 +372,8 @@ details.dark {
   width: 50px;
   height: 50px;
   transform: translate(-50%);
-  top: 350px;
-  left: 1000px;
+  top: 250px;
+  left: 950px;
 }
 
 #clicks {
@@ -403,10 +403,10 @@ details.dark {
 
 .roboter-step1 {
   left: 650px;
-  top: 850px;
+  top: 690px;
 }
 .roboter-step2 {
-  top: 700px;
+  top: 620px;
   left: 330px;
 }
 .roboter-step3 {
@@ -414,18 +414,19 @@ details.dark {
   left: 330px;
 }
 .roboter-step4 {
-  top: 850px;
+  top: 690px;
   left: 18%;
 }
 
 .roboter-step6 {
-  top: 20px;
-  left: 570px;
+  top: 3px;
+  left: 550px;
+  z-index: 100;
 }
 
 .roboter-step7 {
 
-  top: 850px;
+  top: 690px;
   left: 870px;
 }
 
@@ -454,13 +455,13 @@ details.dark {
     }
 
 .anleitung {
-  width: 80%;
-  height: 80%;
+  width: 50%;
+  height: 50%;
   background-color: #0171bd;
   z-index: 100;
   position: absolute;
-  left: 10%;
-  top: 10%;
+  left: 25%;
+  top: 25%;
   border-radius: 15px;
 }
 
@@ -474,8 +475,10 @@ details.dark {
   left: 2%;
 }
 
-#anleitung-1 {
+.anleitung-1 {
   width: 100%;
+  margin: 0;
+
 
 }
 
