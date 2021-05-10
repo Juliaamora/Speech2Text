@@ -23,7 +23,7 @@
   </head>
 
   <body>
-    <nav>
+    <nav id="top">
       <div class="logo">
         <img src="../assets/speechie2.png" />
       </div>
@@ -35,7 +35,7 @@
       <ul>
         <li>
           <label for="btn-1" class="show">Datei +</label>
-          <a href="#">Datei</a>
+          <a id="datei" href="#">Datei</a>
           <input type="checkbox" id="btn-1" />
           <ul>
             <li id="openFile"><a href="#">Audio-Datei öffnen</a></li>
@@ -45,9 +45,10 @@
           </ul>
         </li>
         <li>
-          <a id="tutorial" href="#" onclick="startTutorial()">Anleitung</a>
+          <a id="tutorial" href="#" onclick="startTutorial()">Tutorial</a>
         </li>
         <li><a href="#">Kontakt</a></li>
+        <li><a href="#"><i class="far fa-question-circle"></i></a></li>
       </ul>
     </nav>
 

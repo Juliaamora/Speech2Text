@@ -10,8 +10,14 @@ let saveButton = document.querySelector('#btnSave');
 let audioText = document.querySelector('#custom-text');
 let change = document.getElementById('change');
 let k = 1;
+const interim = document.querySelector('.interim');
+const final = document.querySelector('.final');
+const datei = document.querySelector('#datei');
+const coloredButtons = document.querySelector('.coloredButtons');
+const helpButton = document.querySelector('.fa-question-circle ');
 
 let speaker = '';
+
 
 function switchColor(color) {
   let test = color + ': ' + document.getElementById('final').appendChild(span);
@@ -164,8 +170,8 @@ const tutorial = document.querySelector("#tutorial");
 const roboter = document.querySelector("#roboter");
 let infoText = document.querySelector("#info-text");
 
+
 function startTutorial() {
-    console.log("test");
     roboter.classList.replace("hidden","roboter-visible");
 }
 
@@ -200,53 +206,83 @@ function changePosition () {
 let animationClass="roboter-visible";
 
 
+
 function step1() {
     roboter.classList.replace(animationClass,"roboter-step1");
     setInfoText("Hier kannst du die Transkription starten und pausieren.");
     animationClass="roboter-step1";
+    playButtonHTML.classList.add("pulse");
+    window.scrollTo(0,document.body.scrollHeight);
+  
+
 }
 function step2() {
     roboter.classList.replace(animationClass,"roboter-step2");
     setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
     animationClass="roboter-step2";
+    playButtonHTML.classList.remove("pulse");
+    interim.classList.add("pulse-light");
 }
 function step3() {
     roboter.classList.replace(animationClass,"roboter-step3");
     setInfoText("Hier oben steht dann dein endgültiger Text.");
     animationClass="roboter-step3";
+    interim.classList.remove("pulse-light");
+    final.classList.add("pulse-light");
+    document.documentElement.scrollTop;
 }
 function step4() {
     roboter.classList.replace(animationClass,"roboter-step4");
     setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
     animationClass="roboter-step4";
+    final.classList.remove("pulse-light");
+    saveButton.classList.add("pulse");
 }
 
 function step5() {
     setInfoText("Diese Funktion ist ebenfalls durch das Menü erreichbar unter: Datei > Speichern"); 
+    saveButton.classList.remove("pulse");
+  
 }
 
 function step6() {
     roboter.classList.replace(animationClass,"roboter-step6");
     setInfoText("Hier kannst unter Datei > Öffnen Audiodateien öffnen und abspielen lassen");
     animationClass="roboter-step6";
+    document.documentElement.scrollTop = 0;
+    
+    
 }
 function step7() {
     roboter.classList.replace(animationClass,"roboter-step7");
     setInfoText("Oh, deine Freunde sind auch mit dabei? Hiermit kannst du die Sprecher im Text unterschiedlich darstellen");
     animationClass="roboter-step7";
+    datei.classList.remove("pulse-light");
+    coloredButtons.classList.add("pulse-light");
+    window.scrollTo(0,document.body.scrollHeight);
+
+
 }
 function step8() {
     roboter.classList.replace(animationClass,"roboter-visible");
-    setInfoText("Alles klar? Dann kann es ja losgehen!");
+    setInfoText("Alles klar? Dann kann es ja losgehen! Eine ausführliche Anleitung findest du oben im Menü.");
     animationClass="roboter-visible";
+    coloredButtons.classList.remove("pulse-light");
+    helpButton.classList.add("pulse");
+    document.documentElement.scrollTop = 0;
 }
 function step9() {
   roboter.classList.replace(animationClass,"hidden");
+  coloredButtons.classList.remove("pulse-light");
+  saveButton.classList.remove("pulse");
+  final.classList.remove("pulse-light");
+  interim.classList.remove("pulse-light");
+  playButtonHTML.classList.remove("pulse");
   animationClass="roboter-visible";
   clicks=0;
   setInfoText("Hi ich bin Spexter, ich zeig dir wie meine Welt transkribiert!");
+  document.documentElement.scrollTop = 0;
 }
-
 
 
 function setInfoText(text) {
@@ -260,4 +296,6 @@ change.addEventListener('change', () => {
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
 });
+
+document.documentElement.scrollTop;
 
