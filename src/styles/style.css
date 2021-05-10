@@ -19,6 +19,7 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 100;
+  top: 0px;
 }
 
 nav:after {
@@ -231,15 +232,23 @@ p {
 
 /*__________________Audio___________________*/
 audio {
-  top: 5%;
-  left: 50%;
+  right: 5%;
   transform: translate(-50%, -50%);
   position: relative;
-  z-index: -100;
+
 }
 
 .audiobar {
-  margin-bottom: 15px;
+  padding-left: 90%;
+  margin-top: -790px;
+  position: relative;
+}
+
+.custom-text{
+  margin-top: -20px;
+  margin-left: -60px;
+  position: relative;
+
 }
 
 /*__________________Transkriptions-Container___________________*/
@@ -265,7 +274,7 @@ fieldset {
   max-width: 30%;
   margin: auto;
   border: none;
-  padding-top: 3em;
+  padding-top: 5%;
   border-radius: 4px;
 }
 
@@ -358,8 +367,8 @@ i:hover {
 }
 
 .label {
-  margin-left: 10px;
-  margin-top: 60px;
+  margin-left: 30px;
+  margin-top: -810px;
   background-color: #999;
   border-radius: 50px;
   cursor: pointer;
@@ -367,10 +376,10 @@ i:hover {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  position: relative;
   height: 18px;
   width: 35px;
   transform: scale(1.5);
+  position: absolute;
 }
 
 .label .ball {

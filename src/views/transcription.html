@@ -54,20 +54,7 @@
       </ul>
     </nav>
 
-    <fieldset>
-      <div class="darkmode">
-        <input type="checkbox" class="checkbox" id="change" />
-        <label class="label" for="change">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
-          <div class="ball"></div>
-        </label>
-      </div>
-      <div class="audiobar">
-        <audio controls id="myAudio" autoplay></audio>
-        <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-        <span id="custom-text">No file chosen, yet.</span>
-      </div>
+      <fieldset>
 
       <div id="final" class="final"></div>
       <div id="editor"></div>
@@ -102,6 +89,20 @@
       <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->
     </fieldset>
+
+    <div class="darkmode">
+      <input type="checkbox" class="checkbox" id="change" />
+      <label class="label" for="change">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+        <div class="ball"></div>
+      </label>
+    </div>
+    <div class="audiobar">
+      <audio controls id="myAudio" autoplay></audio>
+      <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
+      <div class= "custom-text" id="custom-text">No file chosen, yet.</div>
+    </div>
 
     <div id="roboter" class="hidden">
       <img id="speechie-robot" src="/src/assets/Spechie-roboter.svg" />
