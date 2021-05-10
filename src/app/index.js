@@ -152,8 +152,8 @@ function save() {
             'width': 170,
             //'elementHandlers': specialElementHandlers
         });
-    doc.save('speechie.pdf');
-} */
+    doc.save('speechie.pdf'); */
+}
 
   //Audiofile einbinden
   const realFileBtn = document.getElementById('real-file');
@@ -191,7 +191,6 @@ function save() {
     }
 
 })
-}
 
 //Anleitung
 
