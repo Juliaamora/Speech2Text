@@ -23,12 +23,7 @@
   </head>
 
   <body>
-
-
     <nav>
-      
-
-      
       <label for="btn" class="icon">
         <span class="fa fa-bars"></span>
       </label>
@@ -42,13 +37,12 @@
             <li id="openFile"><a href="#">Audio-Datei öffnen</a></li>
             <li><a href="#" onclick="savetxt();">Speichern als TXT</a></li>
             <li><a href="#" onclick="save()">Exportieren als PDF</a></li>
-            <li><a href="#">Eigenschaften</a></li>
+            <li><a href="#">Eigenschaften</a></li>           
           </ul>
         </li>
         <li><a href="#">Kontakt</a></li>
         <li><a id="tutorial" href="#" onclick="startTutorial()">Tutorial</a></li>
         <li><a href="#" id="openHelp"><i class="far fa-question-circle"></i></a></li>     
-    </div>
       </ul>
       <div class="logo">
         <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API"><img class="mdn-logo" src="../assets/MDN_Web_Docs.svg.png"/></a>
@@ -58,12 +52,15 @@
         </div>
       </div>
     </nav>
-   <div class="anleitung">
+
+    <div class="anleitung hidden">
           <button class="far fa-times-circle" id="closeAnleitung"></button>
           <div id="wrapper-anleitung">
           <img id="anleitung-1" src="/src/assets/anleitung-1.png">
-          </div>
-      <fieldset>
+          </div>  
+    </div>
+     
+    <fieldset>
         <details>
           <summary id="summary">Audio-Datei</summary>
           <div class="audiobar">
@@ -102,11 +99,7 @@
           ></i>
         </div>
       </div>
-      <div class="audiobar">
-        <audio controls id="myAudio" autoplay></audio>
-        <input type="file" accept="audio/*" id="real-file" hidden="hidden" />
-        <span id="custom-text">No file chosen, yet.</span>
-      </div>
+  
       <!--<button id="btnSavePDF" onclick="save()">save as PDF</button>
 <button id="cmd" onclick="save()">as txt</button> -->
     </fieldset>

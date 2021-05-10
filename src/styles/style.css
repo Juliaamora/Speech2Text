@@ -163,7 +163,7 @@ audio::-webkit-media-controls-panel{
 }
 
 p {
-  font-size: 35px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -394,6 +394,7 @@ details.dark {
 #clicks:hover, .fa-times-circle:hover{
     cursor: pointer;
     color: #0171bd;
+}
 
 #clicks:hover {
   cursor: pointer;

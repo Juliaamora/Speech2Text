@@ -331,6 +331,11 @@ const closeButtonAnleitung = document.querySelector('.fa-times-circle');
 closeButtonAnleitung.addEventListener('click', refresh);
 helpButton.addEventListener('click', openAnleitung);
 
+function refresh() {
+  anleitung.classList.add('hidden');
+  console.log("refresh")
+}
+
 function openAnleitung() {
   anleitung.classList.remove('hidden');
   console.log("öffne anleitung")
@@ -338,9 +343,6 @@ function openAnleitung() {
 
 window.addEventListener("load", refresh);
 
-function refresh() {
-  anleitung.classList.add('hidden');
-  console.log("refresh")
 
 function updateScroll(){
   let element = document.getElementById('final');
