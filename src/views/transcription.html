@@ -23,7 +23,11 @@
   </head>
 
   <body>
+
+
     <nav>
+      
+
       
       <label for="btn" class="icon">
         <span class="fa fa-bars"></span>
@@ -32,7 +36,7 @@
       <ul>
         <li>
           <label for="btn-1" class="show">Datei +</label>
-          <a href="#">Datei</a>
+          <a id="datei" href="#">Datei</a>
           <input type="checkbox" id="btn-1" />
           <ul>
             <li id="openFile"><a href="#">Audio-Datei öffnen</a></li>
@@ -41,20 +45,24 @@
             <li><a href="#">Eigenschaften</a></li>
           </ul>
         </li>
-        <li>
-          <a id="tutorial" href="#" onclick="startTutorial()">Anleitung</a>
-        </li>
         <li><a href="#">Kontakt</a></li>
+        <li><a id="tutorial" href="#" onclick="startTutorial()">Tutorial</a></li>
+        <li><a href="#" id="openHelp"><i class="far fa-question-circle"></i></a></li>     
+    </div>
       </ul>
       <div class="logo">
         <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API"><img class="mdn-logo" src="../assets/MDN_Web_Docs.svg.png"/></a>
-
         <div class="speechie">
           <a href="/index.html"><img class="speechie-logo" src="../assets/speechie2.png"/></a>
           speechie
         </div>
       </div>
     </nav>
+   <div class="anleitung">
+          <button class="far fa-times-circle" id="closeAnleitung"></button>
+          <div id="wrapper-anleitung">
+          <img id="anleitung-1" src="/src/assets/anleitung-1.png">
+          </div>
       <fieldset>
         <details>
           <summary id="summary">Audio-Datei</summary>
@@ -123,6 +131,7 @@
           onclick="onClick()"
           class="fas fa-arrow-right"
         ></button>
+        <button class="far fa-times-circle" onclick="step9()"></button>
       </div>
     </div>
   </body>

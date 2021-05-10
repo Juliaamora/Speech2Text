@@ -15,8 +15,14 @@ let greenBtn = document.getElementById('greenBtn');
 let purpleBtn = document.getElementById('purpleBtn');
 
 let k = 1;
+const interim = document.querySelector('.interim');
+const final = document.querySelector('.final');
+const datei = document.querySelector('#datei');
+const coloredButtons = document.querySelector('.coloredButtons');
+const helpButton = document.querySelector('#openHelp');
 
 let speaker = '';
+
 
 function switchColor(color) {
   let test = color + ': ' + document.getElementById('final').appendChild(span);
@@ -193,8 +199,8 @@ const tutorial = document.querySelector("#tutorial");
 const roboter = document.querySelector("#roboter");
 let infoText = document.querySelector("#info-text");
 
+
 function startTutorial() {
-    console.log("test");
     roboter.classList.replace("hidden","roboter-visible");
 }
 
@@ -222,57 +228,94 @@ function changePosition () {
         step7()
     } else if(clicks===8) {
         step8()
-    } 
+    }  else if(clicks===9) {
+      step9()
+  } 
 }
+let animationClass="roboter-visible";
+
 
 
 function step1() {
-    console.log("weiter1");
-    roboter.classList.replace("roboter-visible","roboter-step1");
+    roboter.classList.replace(animationClass,"roboter-step1");
     setInfoText("Hier kannst du die Transkription starten und pausieren.");
+    animationClass="roboter-step1";
+    playButtonHTML.classList.add("pulse");
+    window.scrollTo(0,document.body.scrollHeight);
+  
+
 }
 function step2() {
-    console.log("weiter2");
-    roboter.classList.replace("roboter-step1","roboter-step2");
+    roboter.classList.replace(animationClass,"roboter-step2");
     setInfoText("Hier unten siehst du in Echtzeit, was Speechie aus dem Gesagten erkennt.");
+    animationClass="roboter-step2";
+    playButtonHTML.classList.remove("pulse");
+    interim.classList.add("pulse-light");
 }
 function step3() {
-    console.log("weiter3");
-    roboter.classList.replace("roboter-step2","roboter-step3");
+    roboter.classList.replace(animationClass,"roboter-step3");
     setInfoText("Hier oben steht dann dein endgültiger Text.");
+    animationClass="roboter-step3";
+    interim.classList.remove("pulse-light");
+    final.classList.add("pulse-light");
+    document.documentElement.scrollTop;
 }
 function step4() {
-    console.log("weiter4");
-    roboter.classList.replace("roboter-step3","roboter-step4");
+    roboter.classList.replace(animationClass,"roboter-step4");
     setInfoText("Hier kannst du deine txt-Datei herunterladen und dann direkt bearbeiten");
+    animationClass="roboter-step4";
+    final.classList.remove("pulse-light");
+    saveButton.classList.add("pulse");
 }
 
 function step5() {
-    console.log("weiter5");
     setInfoText("Diese Funktion ist ebenfalls durch das Menü erreichbar unter: Datei > Speichern"); 
+    saveButton.classList.remove("pulse");
+  
 }
 
 function step6() {
-    console.log("weiter6");
-    roboter.classList.replace("roboter-step4","roboter-step6");
+    roboter.classList.replace(animationClass,"roboter-step6");
     setInfoText("Hier kannst unter Datei > Öffnen Audiodateien öffnen und abspielen lassen");
+    animationClass="roboter-step6";
+    document.documentElement.scrollTop = 0;
+    
+    
 }
 function step7() {
-    console.log("weiter6");
-    roboter.classList.replace("roboter-step6","roboter-step7");
+    roboter.classList.replace(animationClass,"roboter-step7");
     setInfoText("Oh, deine Freunde sind auch mit dabei? Hiermit kannst du die Sprecher im Text unterschiedlich darstellen");
+    animationClass="roboter-step7";
+    datei.classList.remove("pulse-light");
+    coloredButtons.classList.add("pulse-light");
+    window.scrollTo(0,document.body.scrollHeight);
+
+
 }
 function step8() {
-    console.log("weiter6");
-    roboter.classList.replace("roboter-step7","roboter-visible");
-    setInfoText("Alles klar? Dann kann es ja losgehen!");
+    roboter.classList.replace(animationClass,"roboter-visible");
+    setInfoText("Alles klar? Dann kann es ja losgehen! Eine ausführliche Anleitung findest du oben im Menü.");
+    animationClass="roboter-visible";
+    coloredButtons.classList.remove("pulse-light");
+    helpButton.classList.add("pulse");
+    document.documentElement.scrollTop = 0;
 }
-
+function step9() {
+  roboter.classList.replace(animationClass,"hidden");
+  coloredButtons.classList.remove("pulse-light");
+  saveButton.classList.remove("pulse");
+  final.classList.remove("pulse-light");
+  interim.classList.remove("pulse-light");
+  playButtonHTML.classList.remove("pulse");
+  animationClass="roboter-visible";
+  clicks=0;
+  setInfoText("Hi ich bin Spexter, ich zeig dir wie meine Welt transkribiert!");
+  document.documentElement.scrollTop = 0;
+}
 
 function setInfoText(text) {
     infoText.innerHTML = text;
     }
-
 
 change.addEventListener('change', () => {
   document.body.classList.toggle('dark');
@@ -281,6 +324,23 @@ change.addEventListener('change', () => {
   audioText.classList.toggle('darkAudioText');
   summary.classList.toggle('darkSummary')
 });
+
+const anleitung = document.querySelector('.anleitung');
+const closeButtonAnleitung = document.querySelector('.fa-times-circle');
+
+closeButtonAnleitung.addEventListener('click', refresh);
+helpButton.addEventListener('click', openAnleitung);
+
+function openAnleitung() {
+  anleitung.classList.remove('hidden');
+  console.log("öffne anleitung")
+};
+
+window.addEventListener("load", refresh);
+
+function refresh() {
+  anleitung.classList.add('hidden');
+  console.log("refresh")
 
 function updateScroll(){
   let element = document.getElementById('final');
