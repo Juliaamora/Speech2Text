@@ -14,7 +14,7 @@ const interim = document.querySelector('.interim');
 const final = document.querySelector('.final');
 const datei = document.querySelector('#datei');
 const coloredButtons = document.querySelector('.coloredButtons');
-const helpButton = document.querySelector('.fa-question-circle ');
+const helpButton = document.querySelector('#openHelp');
 
 let speaker = '';
 
@@ -299,3 +299,20 @@ change.addEventListener('change', () => {
 
 document.documentElement.scrollTop;
 
+const anleitung = document.querySelector('.anleitung');
+const closeButtonAnleitung = document.querySelector('.fa-times-circle');
+
+closeButtonAnleitung.addEventListener('click', refresh);
+helpButton.addEventListener('click', openAnleitung);
+
+function openAnleitung() {
+  anleitung.classList.remove('hidden');
+  console.log("öffne anleitung")
+};
+
+window.addEventListener("load", refresh);
+
+function refresh() {
+  anleitung.classList.add('hidden');
+  console.log("refresh")
+}

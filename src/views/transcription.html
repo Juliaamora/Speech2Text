@@ -44,13 +44,18 @@
             <li><a href="#">Eigenschaften</a></li>
           </ul>
         </li>
-        <li>
-          <a id="tutorial" href="#" onclick="startTutorial()">Tutorial</a>
-        </li>
         <li><a href="#">Kontakt</a></li>
-        <li><a href="#"><i class="far fa-question-circle"></i></a></li>
+        <li><a id="tutorial" href="#" onclick="startTutorial()">Tutorial</a></li>
+        <li><a href="#" id="openHelp"><i class="far fa-question-circle"></i></a></li>
       </ul>
     </nav>
+
+    <div class="anleitung">
+      <button class="far fa-times-circle" id="closeAnleitung"></button>
+      <div id="wrapper-anleitung">
+        <img id="anleitung-1" src="/src/assets/anleitung-1.png">
+      </div>
+    </div>
 
     <fieldset>
       <div class="darkmode">

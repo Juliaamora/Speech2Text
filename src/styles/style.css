@@ -12,6 +12,7 @@ body {
   background: #ffffff;
 }
 
+
 /*__________________Navigationsleiste groß___________________*/
 
 nav {
@@ -201,18 +202,6 @@ input {
     content: '\f00d';
   }
 }
-
-
-#pulse:hover {
-    animation: pulse 1s infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% {transform: scale(1);}
-    }
 
 p {
     font-size: 15px;
@@ -527,5 +516,43 @@ i:hover {
     50% { transform: scale(1.05);}
     100% { transform: scale(1); }
     }
+
+.anleitung {
+  width: 80%;
+  height: 80%;
+  background-color: #0171bd;
+  z-index: 100;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  border-radius: 15px;
+}
+
+#closeAnleitung {
+  background: none;
+  position: relative;
+  font-size: 25px;
+  transform: translate();
+  color: white;
+  top: 2%;
+  left: 2%;
+}
+
+#anleitung-1 {
+  width: 100%;
+
+}
+
+#wrapper-anleitung {
+  width: 90%;
+  height: 90%;
+  z-index: 100;
+  left: 5%;
+  top: 5%;
+  position: absolute;
+  overflow: scroll;
+  object-fit: contain;
+}
+
 
   
