@@ -8,6 +8,7 @@ let span = document.createElement('p');
 const playButtonHTML = document.getElementById('play-button');
 let saveButton = document.querySelector('#btnSave');
 let audioText = document.querySelector('#custom-text');
+let summary = document.querySelector('summary')
 let change = document.getElementById('change');
 let redBtn = document.getElementById('redBtn');
 let greenBtn = document.getElementById('greenBtn');
@@ -152,9 +153,9 @@ function save() {
   const realFileBtn = document.getElementById('real-file');
   const customBtn = document.getElementById('openFile');
   const customTxt = document.getElementById('custom-text');
-
+  
   customBtn.addEventListener('click', function () {
-    realFileBtn.click();
+  realFileBtn.click();
   });
 
   realFileBtn.addEventListener('change', function () {
@@ -278,6 +279,7 @@ change.addEventListener('change', () => {
   saveButton.classList.toggle('darkbuttons');
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
+  summary.classList.toggle('darkSummary')
 });
 
 function updateScroll(){

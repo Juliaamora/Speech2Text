@@ -19,8 +19,10 @@ nav {
   width: 100%;
   position: fixed;
   z-index: 100;
+  top: 0px;
   min-width: 950px;
 }
+
 
 nav:after {
   content: '';
@@ -115,21 +117,36 @@ input {
 
 /*__________________Audio___________________*/
 audio {
-  top: 5%;
-  left: 50%;
   transform: translate(-50%, -50%);
   position: relative;
-  z-index: -100;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: 5px solid #0171bd ;
+  width: 200%;
+  margin-top: 10px;
 }
 
 .audiobar {
-  margin-bottom: 15px;
+  top: 15px;
+  padding-left: 50%;
+  position: relative;
+}
+
+.custom-text{
+  margin-top: -35px;
+  margin-left: -360px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+audio::-webkit-media-controls-panel{
+  background-color: rgb(255, 255, 255);
 }
 
 /*__________________Transkriptions-Container___________________*/
 .content {
   z-index: -1;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -149,7 +166,7 @@ fieldset {
   max-width: 30%;
   margin: auto;
   border: none;
-  padding-top: 3em;
+  padding-top: 100px;
   border-radius: 4px;
 }
 
@@ -189,38 +206,38 @@ textarea {
   cursor: pointer;
   font-size: 40px;
   
-}
-
-#btnSave {
+  }
+  
+  #btnSave {
   position: relative;
   top: 50%;
   cursor: pointer;
   font-size: 40px;
   float: left;
-}
-
-i:hover {
+  }
+  
+  i:hover {
   text-shadow: 0 0 10px #0171bd;
-}
-
-.colorbutton {
+  }
+  
+  .colorbutton {
   font-size: 30px;
   margin-right: 15px;
   margin-left: 15px;
-}
-
-.buttons {
+  }
+  
+  .buttons {
   justify-content: center;
   display: flex;
   position: relative;
-}
-
-.coloredButtons {
-  padding: 10px;
-  margin-left: 60%;
+  }
+  
+  .coloredButtons {
+  padding: 5px;
+  margin-left: 62%;
   background-color: lightgrey;
   border-radius: 50px;
-}
+  }
 
 .speakerred {
   color: red;
@@ -242,12 +259,11 @@ i:hover {
 
 .checkbox {
   opacity: 0;
-  position: absolute;
 }
 
 .label {
-  margin-left: 10px;
-  margin-top: 60px;
+  margin-left: 30px;
+  margin-top: -900px;
   background-color: #999;
   border-radius: 50px;
   cursor: pointer;
@@ -255,10 +271,10 @@ i:hover {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  position: relative;
   height: 18px;
   width: 35px;
   transform: scale(1.5);
+  position: absolute;
 }
 
 .label .ball {
@@ -291,9 +307,14 @@ body.dark {
   background: #2a2a2a;
   transition: 0.2s;
 }
+details.dark {
+  color: #f3f3f3;
+}
 
 .darkmode {
   padding-left: -230px;
+  position: relative;
+  padding-top: 80px;
 }
 
 .darkbuttons {
@@ -301,6 +322,10 @@ body.dark {
 }
 
 .darkAudioText {
+  color: white;
+}
+
+.darkSummary{
   color: white;
 }
 
