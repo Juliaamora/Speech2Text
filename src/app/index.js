@@ -8,6 +8,7 @@ let span = document.createElement('p');
 const playButtonHTML = document.getElementById('play-button');
 let saveButton = document.querySelector('#btnSave');
 let audioText = document.querySelector('#custom-text');
+let summary = document.querySelector('summary')
 let change = document.getElementById('change');
 let redBtn = document.getElementById('redBtn');
 let greenBtn = document.getElementById('greenBtn');
@@ -275,5 +276,6 @@ change.addEventListener('change', () => {
   saveButton.classList.toggle('darkbuttons');
   playButtonHTML.classList.toggle('darkbuttons');
   audioText.classList.toggle('darkAudioText');
+  summary.classList.toggle('darkSummary')
 });
 
