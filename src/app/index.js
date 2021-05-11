@@ -19,7 +19,7 @@ const interim = document.querySelector('.interim');
 const final = document.querySelector('.final');
 const datei = document.querySelector('#datei');
 const coloredButtons = document.querySelector('.coloredButtons');
-const helpButton = document.querySelector('#openHelp');
+const helpButton = document.querySelector('#help-pulse');
 
 let speaker = '';
 
@@ -296,7 +296,7 @@ function step8() {
     setInfoText("Alles klar? Dann kann es ja losgehen! Eine ausführliche Anleitung findest du oben im Menü.");
     animationClass="roboter-visible";
     coloredButtons.classList.remove("pulse-light");
-    helpButton.classList.add("pulse");
+    helpButton.classList.add("pulse-heavy");
     document.documentElement.scrollTop = 0;
 }
 function step9() {
@@ -306,6 +306,7 @@ function step9() {
   final.classList.remove("pulse-light");
   interim.classList.remove("pulse-light");
   playButtonHTML.classList.remove("pulse");
+  helpButton.classList.remove("pulse-heavy");
   animationClass="roboter-visible";
   clicks=0;
   setInfoText("Hi ich bin Spexter, ich zeig dir wie meine Welt transkribiert!");
